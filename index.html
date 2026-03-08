@@ -2594,7 +2594,7 @@ function sapa(nama) {
   <a href="#deprecated" onclick="closeMenuDrawer()"><span class="tag-badge">⚠</span> Deprecated</a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Copy button
   function copyCode(btn) {
     const pre = btn.closest('.code-block').querySelector('pre');
@@ -2669,30 +2669,31 @@ function sapa(nama) {
   }
   const searchIndex = buildSearchIndex();
 
-  function openMobileSearch() {
-    document.getElementById('searchModalOverlay').classList.add('open');
-    setTimeout(() => document.getElementById('mobileSearchInput').focus(), 100);
-    renderMobileResults('');
-  }
-  function closeMobileSearch() {
-    document.getElementById('searchModalOverlay').classList.remove('open');
-    document.getElementById('mobileSearchInput').value = '';
-  }
-  function renderMobileResults(q) {
+  window.renderMobileResults = function(q) {
     const container = document.getElementById('mobileSearchResults');
     const items = q ? searchIndex.filter(i => i.label.toLowerCase().includes(q) || (i.href||'').toLowerCase().includes(q) || i.badge.toLowerCase().includes(q)) : searchIndex;
     if (!items.length) { container.innerHTML = '<div class="search-empty">Tidak ditemukan 🤔</div>'; return; }
     container.innerHTML = items.map(i => `<a class="search-result-item" href="${i.href}"><span class="res-badge">${i.badge||'?'}</span><span class="res-label">${i.label.replace(i.badge,'').trim()}</span></a>`).join('');
-    container.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileSearch));
+    container.querySelectorAll('a').forEach(a => a.addEventListener('click', window.closeMobileSearch));
   }
-  document.getElementById('mobileSearchInput').addEventListener('input', function() { renderMobileResults(this.value.trim().toLowerCase()); });
+  window.openMobileSearch = function() {
+    document.getElementById('searchModalOverlay').classList.add('open');
+    setTimeout(() => document.getElementById('mobileSearchInput').focus(), 100);
+    window.renderMobileResults('');
+  }
+  window.closeMobileSearch = function() {
+    document.getElementById('searchModalOverlay').classList.remove('open');
+    document.getElementById('mobileSearchInput').value = '';
+  }
+  const _msi = document.getElementById('mobileSearchInput');
+  if (_msi) _msi.addEventListener('input', function() { window.renderMobileResults(this.value.trim().toLowerCase()); });
 
   // ── Menu drawer ──
-  function openMenuDrawer() {
+  window.openMenuDrawer = function() {
     document.getElementById('menuDrawer').classList.add('open');
     document.getElementById('menuDrawerOverlay').classList.add('open');
   }
-  function closeMenuDrawer() {
+  window.closeMenuDrawer = function() {
     document.getElementById('menuDrawer').classList.remove('open');
     document.getElementById('menuDrawerOverlay').classList.remove('open');
   }
@@ -2716,3 +2717,8 @@ function sapa(nama) {
     }
 
     // Sine wa
+  }
+
+</script>
+</body>
+</html>
