@@ -364,6 +364,92 @@
       .main { padding: 24px 16px; }
     }
 
+
+    /* Search */
+    .search-wrap { padding: 10px 14px 4px; position: relative; }
+    .search-box {
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 7px 10px 7px 30px; font-size: 0.78rem;
+      color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif;
+      outline: none; transition: border-color 0.15s; box-sizing: border-box;
+    }
+    .search-box::placeholder { color: var(--muted); }
+    .search-box:focus { border-color: var(--accent); }
+    .search-icon { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.78rem; pointer-events: none; }
+    .search-no-result { display:none; padding: 6px 20px; font-size: 0.75rem; color: var(--muted); }
+    .sidebar a.search-hidden { display: none; }
+    .sidebar-section.search-hidden { display: none; }
+
+    /* Mobile */
+    .mobile-nav { display: none; }
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { padding: 24px 16px 90px; }
+      .mobile-nav {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+        background: var(--surface); border-top: 1px solid var(--border);
+        z-index: 100; padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+      }
+      .mobile-nav-btn {
+        flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+        background: none; border: none; color: var(--muted); font-size: 0.6rem;
+        font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; padding: 4px 0;
+      }
+      .mobile-nav-btn .nav-icon { font-size: 1rem; }
+      /* Search modal */
+      .search-modal-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200;
+      }
+      .search-modal-overlay.open { display: flex; align-items: flex-end; }
+      .search-modal {
+        background: var(--surface); border-radius: 16px 16px 0 0; width: 100%;
+        max-height: 80vh; display: flex; flex-direction: column;
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+      }
+      .search-modal-header {
+        padding: 14px 14px 8px; display: flex; gap: 10px; align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+      .search-modal-input {
+        flex: 1; background: var(--surface2); border: 1px solid var(--border);
+        border-radius: 8px; padding: 9px 12px; font-size: 0.9rem;
+        color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; outline: none;
+      }
+      .search-modal-input:focus { border-color: var(--accent); }
+      .search-modal-cancel {
+        background: none; border: none; color: var(--accent); font-size: 0.82rem;
+        font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer;
+      }
+      .search-modal-results { overflow-y: auto; padding: 6px 0; flex: 1; }
+      .search-result-item {
+        display: flex; align-items: center; gap: 10px; padding: 11px 16px;
+        cursor: pointer; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text);
+      }
+      .search-result-item:active { background: var(--surface2); }
+      .res-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; background: var(--surface2); color: var(--cyan); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+      .res-label { font-size: 0.85rem; }
+      .search-empty { padding: 28px; text-align: center; color: var(--muted); font-size: 0.82rem; }
+      /* Menu drawer */
+      .menu-drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; }
+      .menu-drawer-overlay.open { display: block; }
+      .menu-drawer {
+        position: fixed; top: 0; left: 0; bottom: 0; width: 285px;
+        background: var(--surface); z-index: 201; overflow-y: auto;
+        transform: translateX(-100%); transition: transform 0.25s ease;
+        padding-bottom: 24px;
+      }
+      .menu-drawer.open { transform: translateX(0); }
+      .menu-drawer .drawer-brand { padding: 20px 20px 14px; border-bottom: 1px solid var(--border); }
+      .menu-drawer .drawer-brand h1 { font-size: 1rem; font-weight: 700; color: var(--accent); }
+      .menu-drawer .drawer-brand p { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+      .menu-drawer .drawer-section { padding: 8px 20px 2px; font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+      .menu-drawer a { display: flex; align-items: center; gap: 8px; padding: 9px 20px; font-size: 0.82rem; color: var(--muted); text-decoration: none; border-left: 2px solid transparent; }
+      .menu-drawer a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(79,142,247,0.07); }
+    }
+    @media (min-width: 769px) {
+      .mobile-nav, .search-modal-overlay, .menu-drawer-overlay, .menu-drawer { display: none !important; }
+    }
+
     /* Scrollbar */
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -404,7 +490,13 @@
       <p>Semua elemen, atribut &amp; contoh kode</p>
     </div>
 
-    <div class="sidebar-section">Metadata</div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-box" type="text" placeholder="Cari elemen... (div, input, img)" id="sidebarSearch" autocomplete="off" spellcheck="false"/>
+    </div>
+    <div class="search-no-result" id="searchNoResult">Tidak ditemukan</div>
+
+        <div class="sidebar-section">Metadata</div>
     <a href="#meta"><span class="tag-badge">meta</span> Meta &amp; Head</a>
 
     <div class="sidebar-section">Struktur</div>
@@ -472,6 +564,7 @@
 
     <div class="sidebar-section">Interaktif</div>
     <a href="#dialog"><span class="tag-badge">dialog</span> Dialog</a>
+    <a href="#popover"><span class="tag-badge">popover</span> Popover</a>
 
     <div class="sidebar-section">Embed</div>
     <a href="#iframe"><span class="tag-badge">iframe</span> iFrame</a>
@@ -2312,6 +2405,63 @@ function sapa(nama) {
 
     <hr/>
 
+    <!-- POPOVER -->
+    <section class="elem-section" id="popover">
+      <div class="elem-header">
+        <span class="elem-tag">popover</span>
+        <span class="elem-name">Popover API</span>
+        <span class="elem-category cat-interactive">Interaktif</span>
+      </div>
+      <p class="elem-desc">API native HTML untuk membuat popover, tooltip, dropdown, dan menu tanpa JavaScript. Elemen dengan atribut <code>popover</code> otomatis punya overlay, focus management, dan tombol tutup via Escape.</p>
+      <div class="tip info"><span class="tip-icon">💡</span><div class="tip-text"><strong>Baru!</strong> Popover API tersedia di semua browser modern sejak 2023. Menggantikan pola JS manual untuk overlay ringan.</div></div>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr><td class="attr-name">popover</td><td class="attr-type">auto | manual</td><td class="attr-desc"><code>auto</code> = menutup saat klik di luar atau tekan Escape. <code>manual</code> = hanya bisa ditutup via JS atau tombol.</td></tr>
+        <tr><td class="attr-name">popovertarget</td><td class="attr-type">id</td><td class="attr-desc">ID elemen popover yang dikontrol oleh button ini.</td></tr>
+        <tr><td class="attr-name">popovertargetaction</td><td class="attr-type">toggle | show | hide</td><td class="attr-desc">Aksi yang dilakukan tombol terhadap popover. Default: <code>toggle</code>.</td></tr>
+        <tr><td class="attr-name">anchor</td><td class="attr-type">id</td><td class="attr-desc">Menghubungkan popover ke elemen anchor untuk CSS Anchor Positioning.</td></tr>
+      </table>
+      <div class="code-block">
+        <div class="code-header"><span>Contoh Popover</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Trigger --&gt;</span>
+<span class="t">&lt;button</span> <span class="a">popovertarget</span>=<span class="v">"menu-pop"</span><span class="t">&gt;</span>Buka Menu<span class="t">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Popover auto: tutup saat klik luar / Escape --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">id</span>=<span class="v">"menu-pop"</span> <span class="a">popover</span>=<span class="v">"auto"</span><span class="t">&gt;</span>
+  <span class="t">&lt;ul&gt;</span>
+    <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#"</span><span class="t">&gt;</span>Profil<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#"</span><span class="t">&gt;</span>Pengaturan<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#"</span><span class="t">&gt;</span>Keluar<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="t">&lt;/ul&gt;</span>
+<span class="t">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Tombol show/hide terpisah --&gt;</span>
+<span class="t">&lt;button</span> <span class="a">popovertarget</span>=<span class="v">"info"</span> <span class="a">popovertargetaction</span>=<span class="v">"show"</span><span class="t">&gt;</span>Tampilkan<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;button</span> <span class="a">popovertarget</span>=<span class="v">"info"</span> <span class="a">popovertargetaction</span>=<span class="v">"hide"</span><span class="t">&gt;</span>Sembunyikan<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;div</span> <span class="a">id</span>=<span class="v">"info"</span> <span class="a">popover</span>=<span class="v">"manual"</span><span class="t">&gt;</span>
+  Info penting di sini.
+<span class="t">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- CSS styling popover --&gt;</span>
+<span class="t">&lt;style&gt;</span>
+  [popover] {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  /* Animasi dengan @starting-style */
+  [popover]:popover-open {
+    opacity: 1; transform: scale(1);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+<span class="t">&lt;/style&gt;</span></pre>
+      </div>
+    </section>
+
+
+    <hr/>
+
     <!-- ─── DEPRECATED ─── -->
     <section class="elem-section" id="deprecated">
       <div class="elem-header">
@@ -2353,6 +2503,97 @@ function sapa(nama) {
   </main>
 </div>
 
+<!-- Mobile bottom nav -->
+<div class="mobile-nav">
+  <button class="mobile-nav-btn" onclick="openMobileSearch()"><span class="nav-icon">🔍</span><span>Cari</span></button>
+  <button class="mobile-nav-btn" onclick="openMenuDrawer()"><span class="nav-icon">☰</span><span>Menu</span></button>
+  <button class="mobile-nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="nav-icon">↑</span><span>Atas</span></button>
+</div>
+
+<!-- Search modal -->
+<div class="search-modal-overlay" id="searchModalOverlay" onclick="if(event.target===this)closeMobileSearch()">
+  <div class="search-modal">
+    <div class="search-modal-header">
+      <input class="search-modal-input" type="text" placeholder="Cari elemen... (div, input, img)" id="mobileSearchInput" autocomplete="off" spellcheck="false"/>
+      <button class="search-modal-cancel" onclick="closeMobileSearch()">Batal</button>
+    </div>
+    <div class="search-modal-results" id="mobileSearchResults"></div>
+  </div>
+</div>
+
+<!-- Menu drawer -->
+<div class="menu-drawer-overlay" id="menuDrawerOverlay" onclick="closeMenuDrawer()"></div>
+<div class="menu-drawer" id="menuDrawer">
+  <div class="drawer-brand"><h1>&lt;/&gt; Referensi HTML</h1><p>Semua elemen, atribut &amp; contoh kode</p></div>
+  <div class="drawer-section">Metadata</div>
+  <a href="#meta" onclick="closeMenuDrawer()"><span class="tag-badge">meta</span> Meta &amp; Head</a>
+  <div class="drawer-section">Struktur</div>
+  <a href="#div" onclick="closeMenuDrawer()"><span class="tag-badge">div</span> Division</a>
+  <a href="#span" onclick="closeMenuDrawer()"><span class="tag-badge">span</span> Span</a>
+  <a href="#section" onclick="closeMenuDrawer()"><span class="tag-badge">section</span> Section</a>
+  <div class="drawer-section">Teks &amp; Judul</div>
+  <a href="#p" onclick="closeMenuDrawer()"><span class="tag-badge">p</span> Paragraph</a>
+  <a href="#h" onclick="closeMenuDrawer()"><span class="tag-badge">h1–h6</span> Heading</a>
+  <a href="#blockquote" onclick="closeMenuDrawer()"><span class="tag-badge">blockquote</span> Blockquote</a>
+  <a href="#pre" onclick="closeMenuDrawer()"><span class="tag-badge">pre/code</span> Pre &amp; Code</a>
+  <a href="#lists" onclick="closeMenuDrawer()"><span class="tag-badge">ul/ol/dl</span> List</a>
+  <a href="#hr" onclick="closeMenuDrawer()"><span class="tag-badge">hr/br</span> HR &amp; BR</a>
+  <a href="#address" onclick="closeMenuDrawer()"><span class="tag-badge">address</span> Address</a>
+  <div class="drawer-section">Inline Teks</div>
+  <a href="#a" onclick="closeMenuDrawer()"><span class="tag-badge">a</span> Anchor / Link</a>
+  <a href="#strongem" onclick="closeMenuDrawer()"><span class="tag-badge">strong/em</span> Strong &amp; Em</a>
+  <a href="#inline-misc" onclick="closeMenuDrawer()"><span class="tag-badge">b/i/u/s</span> Bold/Italic…</a>
+  <a href="#abbr" onclick="closeMenuDrawer()"><span class="tag-badge">abbr/dfn</span> Abbr &amp; Dfn</a>
+  <a href="#code-inline" onclick="closeMenuDrawer()"><span class="tag-badge">code/kbd/samp</span> Code Inline</a>
+  <a href="#mark" onclick="closeMenuDrawer()"><span class="tag-badge">mark</span> Mark</a>
+  <a href="#sub-sup" onclick="closeMenuDrawer()"><span class="tag-badge">sub/sup</span> Sub &amp; Sup</a>
+  <a href="#time" onclick="closeMenuDrawer()"><span class="tag-badge">time</span> Time &amp; Data</a>
+  <a href="#bdi-bdo" onclick="closeMenuDrawer()"><span class="tag-badge">bdi/bdo</span> BDI &amp; BDO</a>
+  <a href="#ruby" onclick="closeMenuDrawer()"><span class="tag-badge">ruby</span> Ruby</a>
+  <a href="#wbr" onclick="closeMenuDrawer()"><span class="tag-badge">wbr/q</span> WBR &amp; Q</a>
+  <div class="drawer-section">Konten Blok</div>
+  <a href="#figure" onclick="closeMenuDrawer()"><span class="tag-badge">figure</span> Figure</a>
+  <a href="#details" onclick="closeMenuDrawer()"><span class="tag-badge">details</span> Details</a>
+  <div class="drawer-section">Media</div>
+  <a href="#img" onclick="closeMenuDrawer()"><span class="tag-badge">img</span> Image</a>
+  <a href="#picture" onclick="closeMenuDrawer()"><span class="tag-badge">picture</span> Picture</a>
+  <a href="#svg" onclick="closeMenuDrawer()"><span class="tag-badge">svg</span> SVG</a>
+  <a href="#canvas" onclick="closeMenuDrawer()"><span class="tag-badge">canvas</span> Canvas</a>
+  <a href="#video" onclick="closeMenuDrawer()"><span class="tag-badge">video</span> Video</a>
+  <a href="#audio" onclick="closeMenuDrawer()"><span class="tag-badge">audio</span> Audio</a>
+  <a href="#map" onclick="closeMenuDrawer()"><span class="tag-badge">map/area</span> Map &amp; Area</a>
+  <div class="drawer-section">Form</div>
+  <a href="#form" onclick="closeMenuDrawer()"><span class="tag-badge">form</span> Form</a>
+  <a href="#input" onclick="closeMenuDrawer()"><span class="tag-badge">input</span> Input</a>
+  <a href="#button" onclick="closeMenuDrawer()"><span class="tag-badge">button</span> Button</a>
+  <a href="#select" onclick="closeMenuDrawer()"><span class="tag-badge">select</span> Select</a>
+  <a href="#textarea" onclick="closeMenuDrawer()"><span class="tag-badge">textarea</span> Textarea</a>
+  <a href="#fieldset" onclick="closeMenuDrawer()"><span class="tag-badge">fieldset</span> Fieldset</a>
+  <a href="#datalist" onclick="closeMenuDrawer()"><span class="tag-badge">datalist</span> Datalist</a>
+  <a href="#label" onclick="closeMenuDrawer()"><span class="tag-badge">label</span> Label</a>
+  <a href="#output" onclick="closeMenuDrawer()"><span class="tag-badge">output</span> Output</a>
+  <a href="#progress" onclick="closeMenuDrawer()"><span class="tag-badge">progress</span> Progress</a>
+  <a href="#meter" onclick="closeMenuDrawer()"><span class="tag-badge">meter</span> Meter</a>
+  <div class="drawer-section">Tabel</div>
+  <a href="#table" onclick="closeMenuDrawer()"><span class="tag-badge">table</span> Table</a>
+  <div class="drawer-section">Semantik</div>
+  <a href="#semantic" onclick="closeMenuDrawer()"><span class="tag-badge">header/main…</span> Semantic HTML5</a>
+  <div class="drawer-section">Scripting</div>
+  <a href="#script" onclick="closeMenuDrawer()"><span class="tag-badge">script</span> Script</a>
+  <a href="#template" onclick="closeMenuDrawer()"><span class="tag-badge">template</span> Template</a>
+  <div class="drawer-section">Interaktif</div>
+  <a href="#dialog" onclick="closeMenuDrawer()"><span class="tag-badge">dialog</span> Dialog</a>
+  <a href="#popover" onclick="closeMenuDrawer()"><span class="tag-badge">popover</span> Popover</a>
+  <div class="drawer-section">Embed</div>
+  <a href="#iframe" onclick="closeMenuDrawer()"><span class="tag-badge">iframe</span> iFrame</a>
+  <a href="#embed" onclick="closeMenuDrawer()"><span class="tag-badge">embed/object</span> Embed &amp; Object</a>
+  <div class="drawer-section">Atribut Global</div>
+  <a href="#global-attrs" onclick="closeMenuDrawer()"><span class="tag-badge">attr</span> Global Attributes</a>
+  <a href="#aria-attrs" onclick="closeMenuDrawer()"><span class="tag-badge">aria</span> ARIA Attributes</a>
+  <div class="drawer-section">Usang</div>
+  <a href="#deprecated" onclick="closeMenuDrawer()"><span class="tag-badge">⚠</span> Deprecated</a>
+</div>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Copy button
   function copyCode(btn) {
@@ -2384,6 +2625,78 @@ function sapa(nama) {
   }, { rootMargin: '-20% 0px -70% 0px' });
 
   sections.forEach(s => observer.observe(s));
+
+  // ── Desktop sidebar search ──
+  const sidebarSearch = document.getElementById('sidebarSearch');
+  const noResult = document.getElementById('searchNoResult');
+  if (sidebarSearch) {
+    sidebarSearch.addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      const allLinks = document.querySelectorAll('.sidebar a');
+      const allSections = document.querySelectorAll('.sidebar-section');
+      if (!q) {
+        allLinks.forEach(l => l.classList.remove('search-hidden'));
+        allSections.forEach(s => s.classList.remove('search-hidden'));
+        noResult.style.display = 'none';
+        return;
+      }
+      let anyVisible = false;
+      allLinks.forEach(link => {
+        const match = link.textContent.toLowerCase().includes(q) || (link.getAttribute('href')||'').toLowerCase().includes(q);
+        link.classList.toggle('search-hidden', !match);
+        if (match) anyVisible = true;
+      });
+      allSections.forEach(sec => {
+        let next = sec.nextElementSibling, hasVisible = false;
+        while (next && !next.classList.contains('sidebar-section')) {
+          if (next.tagName === 'A' && !next.classList.contains('search-hidden')) { hasVisible = true; break; }
+          next = next.nextElementSibling;
+        }
+        sec.classList.toggle('search-hidden', !hasVisible);
+      });
+      noResult.style.display = anyVisible ? 'none' : 'block';
+    });
+    sidebarSearch.addEventListener('keydown', e => { if (e.key === 'Escape') { sidebarSearch.value = ''; sidebarSearch.dispatchEvent(new Event('input')); } });
+  }
+
+  // ── Mobile search ──
+  function buildSearchIndex() {
+    return Array.from(document.querySelectorAll('nav.sidebar a')).map(a => ({
+      href: a.getAttribute('href'),
+      badge: a.querySelector('.tag-badge') ? a.querySelector('.tag-badge').textContent : '',
+      label: a.textContent.trim()
+    }));
+  }
+  const searchIndex = buildSearchIndex();
+
+  function openMobileSearch() {
+    document.getElementById('searchModalOverlay').classList.add('open');
+    setTimeout(() => document.getElementById('mobileSearchInput').focus(), 100);
+    renderMobileResults('');
+  }
+  function closeMobileSearch() {
+    document.getElementById('searchModalOverlay').classList.remove('open');
+    document.getElementById('mobileSearchInput').value = '';
+  }
+  function renderMobileResults(q) {
+    const container = document.getElementById('mobileSearchResults');
+    const items = q ? searchIndex.filter(i => i.label.toLowerCase().includes(q) || (i.href||'').toLowerCase().includes(q) || i.badge.toLowerCase().includes(q)) : searchIndex;
+    if (!items.length) { container.innerHTML = '<div class="search-empty">Tidak ditemukan 🤔</div>'; return; }
+    container.innerHTML = items.map(i => `<a class="search-result-item" href="${i.href}"><span class="res-badge">${i.badge||'?'}</span><span class="res-label">${i.label.replace(i.badge,'').trim()}</span></a>`).join('');
+    container.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileSearch));
+  }
+  document.getElementById('mobileSearchInput').addEventListener('input', function() { renderMobileResults(this.value.trim().toLowerCase()); });
+
+  // ── Menu drawer ──
+  function openMenuDrawer() {
+    document.getElementById('menuDrawer').classList.add('open');
+    document.getElementById('menuDrawerOverlay').classList.add('open');
+  }
+  function closeMenuDrawer() {
+    document.getElementById('menuDrawer').classList.remove('open');
+    document.getElementById('menuDrawerOverlay').classList.remove('open');
+  }
+
 
   // Canvas demo
   const canvas = document.getElementById('demoCanvas');
