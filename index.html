@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Referensi Elemen HTML</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content="Referensi lengkap semua elemen HTML"/>
+  <meta name="keywords" content="html, elemen, referensi, panduan"/>
+  <meta name="author" content="HTML Reference"/>
+  <meta property="og:title" content="Referensi Elemen HTML Lengkap"/>
+  <meta property="og:type" content="website"/>
+  <title>Referensi Elemen HTML — Lengkap</title>
+  <base href="./"/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -17,12 +24,14 @@
       --yellow: #fbbf24;
       --red: #f87171;
       --cyan: #22d3ee;
+      --orange: #fb923c;
+      --pink: #f472b6;
       --text: #e2e8f0;
       --muted: #64748b;
       --radius: 10px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: var(--bg);
@@ -36,7 +45,7 @@
 
     /* Sidebar */
     .sidebar {
-      width: 260px;
+      width: 270px;
       flex-shrink: 0;
       background: var(--surface);
       border-right: 1px solid var(--border);
@@ -50,7 +59,7 @@
     .sidebar-brand {
       padding: 0 20px 20px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     .sidebar-brand h1 {
@@ -60,27 +69,23 @@
       letter-spacing: 0.5px;
     }
 
-    .sidebar-brand p {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
+    .sidebar-brand p { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
 
     .sidebar-section {
-      padding: 6px 20px 2px;
-      font-size: 0.65rem;
+      padding: 10px 20px 4px;
+      font-size: 0.62rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 10px;
+      margin-top: 4px;
     }
 
     .sidebar a {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 20px;
-      font-size: 0.82rem;
+      padding: 6px 20px;
+      font-size: 0.8rem;
       color: var(--muted);
       text-decoration: none;
       transition: all 0.15s;
@@ -92,19 +97,16 @@
 
     .tag-badge {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       background: var(--surface2);
-      padding: 1px 6px;
+      padding: 1px 5px;
       border-radius: 4px;
       color: var(--cyan);
+      flex-shrink: 0;
     }
 
-    /* Main content */
-    .main {
-      flex: 1;
-      padding: 48px 40px;
-      max-width: 860px;
-    }
+    /* Main */
+    .main { flex: 1; padding: 48px 40px; max-width: 900px; }
 
     .page-title {
       font-size: 2rem;
@@ -116,30 +118,24 @@
       background-clip: text;
     }
 
-    .page-sub {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 48px;
-    }
+    .page-sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 48px; }
 
     /* Element section */
-    .elem-section {
-      margin-bottom: 56px;
-      scroll-margin-top: 24px;
-    }
+    .elem-section { margin-bottom: 52px; scroll-margin-top: 24px; }
 
     .elem-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
     }
 
     .elem-tag {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--cyan);
       background: rgba(34,211,238,0.08);
@@ -148,41 +144,43 @@
       border: 1px solid rgba(34,211,238,0.2);
     }
 
-    .elem-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
+    .elem-name { font-size: 1rem; font-weight: 600; color: var(--text); }
 
     .elem-category {
       margin-left: auto;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 99px;
     }
 
-    .cat-structure { background: rgba(79,142,247,0.12); color: var(--accent); }
-    .cat-text      { background: rgba(167,139,250,0.12); color: var(--accent2); }
-    .cat-media     { background: rgba(52,211,153,0.12); color: var(--green); }
-    .cat-form      { background: rgba(251,191,36,0.12); color: var(--yellow); }
-    .cat-table     { background: rgba(248,113,113,0.12); color: var(--red); }
-    .cat-semantic  { background: rgba(34,211,238,0.12); color: var(--cyan); }
+    .cat-structure  { background: rgba(79,142,247,0.12);  color: var(--accent); }
+    .cat-text       { background: rgba(167,139,250,0.12); color: var(--accent2); }
+    .cat-media      { background: rgba(52,211,153,0.12);  color: var(--green); }
+    .cat-form       { background: rgba(251,191,36,0.12);  color: var(--yellow); }
+    .cat-table      { background: rgba(248,113,113,0.12); color: var(--red); }
+    .cat-semantic   { background: rgba(34,211,238,0.12);  color: var(--cyan); }
+    .cat-inline     { background: rgba(244,114,182,0.12); color: var(--pink); }
+    .cat-scripting  { background: rgba(251,146,60,0.12);  color: var(--orange); }
+    .cat-embed      { background: rgba(52,211,153,0.12);  color: var(--green); }
+    .cat-interactive{ background: rgba(167,139,250,0.12); color: var(--accent2); }
+    .cat-meta       { background: rgba(79,142,247,0.12);  color: var(--accent); }
+    .cat-deprecated { background: rgba(248,113,113,0.12); color: var(--red); }
 
     .elem-desc {
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       color: #94a3b8;
-      margin-bottom: 16px;
-      line-height: 1.7;
+      margin-bottom: 14px;
+      line-height: 1.75;
     }
 
-    /* Attributes table */
+    /* Attrs table */
     .attr-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
-      font-size: 0.82rem;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
     }
 
     .attr-table th {
@@ -190,31 +188,21 @@
       padding: 8px 12px;
       background: var(--surface2);
       color: var(--muted);
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       border-bottom: 1px solid var(--border);
     }
 
     .attr-table td {
-      padding: 9px 12px;
+      padding: 8px 12px;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
     }
 
     .attr-table tr:last-child td { border-bottom: none; }
-
-    .attr-name {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--yellow);
-      font-size: 0.8rem;
-    }
-
-    .attr-type {
-      color: var(--accent2);
-      font-size: 0.75rem;
-    }
-
+    .attr-name { font-family: 'JetBrains Mono', monospace; color: var(--yellow); font-size: 0.78rem; }
+    .attr-type { color: var(--accent2); font-size: 0.74rem; }
     .attr-desc { color: #94a3b8; }
 
     /* Code block */
@@ -223,7 +211,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .code-header {
@@ -233,15 +221,13 @@
       padding: 8px 14px;
       background: var(--surface2);
       border-bottom: 1px solid var(--border);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--muted);
       letter-spacing: 1px;
     }
 
     .code-header .dots { display: flex; gap: 5px; }
-    .code-header .dots span {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
+    .code-header .dots span { width: 10px; height: 10px; border-radius: 50%; }
     .code-header .dots span:nth-child(1) { background: #f87171; }
     .code-header .dots span:nth-child(2) { background: #fbbf24; }
     .code-header .dots span:nth-child(3) { background: #34d399; }
@@ -252,7 +238,7 @@
       color: var(--muted);
       padding: 2px 8px;
       border-radius: 4px;
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       cursor: pointer;
       font-family: 'Plus Jakarta Sans', sans-serif;
       transition: all 0.15s;
@@ -264,29 +250,36 @@
       padding: 16px 18px;
       overflow-x: auto;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      line-height: 1.7;
+      font-size: 0.78rem;
+      line-height: 1.75;
       color: var(--text);
     }
 
-    /* Syntax highlighting */
-    .t { color: var(--cyan); }      /* tag */
-    .a { color: var(--yellow); }    /* attr */
-    .v { color: var(--green); }     /* value */
-    .c { color: #475569; font-style: italic; } /* comment */
-    .k { color: var(--accent2); }   /* keyword / special */
+    .t { color: var(--cyan); }
+    .a { color: var(--yellow); }
+    .v { color: var(--green); }
+    .c { color: #475569; font-style: italic; }
+    .k { color: var(--accent2); }
 
-    /* Live preview */
+    /* Preview */
     .preview-box {
       background: #fff;
       border-radius: var(--radius);
       padding: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .preview-dark {
+      background: var(--surface2);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
       border: 1px solid var(--border);
     }
 
     .preview-label {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--muted);
@@ -295,13 +288,7 @@
       align-items: center;
       gap: 6px;
     }
-
-    .preview-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
+    .preview-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* Tips */
     .tip {
@@ -310,60 +297,155 @@
       padding: 12px 14px;
       border-radius: 8px;
       font-size: 0.82rem;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-
     .tip.info { background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); }
     .tip.warn { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); }
     .tip.good { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); }
+    .tip.danger { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); }
 
     .tip-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
     .tip-text { color: #94a3b8; line-height: 1.6; }
     .tip-text strong { color: var(--text); }
 
-    /* Divider */
-    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+
+    /* Input styles inside dark preview */
+    .preview-dark input[type="text"],
+    .preview-dark input[type="email"],
+    .preview-dark input[type="password"],
+    .preview-dark input[type="number"],
+    .preview-dark input[type="search"],
+    .preview-dark input[type="url"],
+    .preview-dark input[type="tel"],
+    .preview-dark input[type="date"],
+    .preview-dark input[type="time"],
+    .preview-dark input[type="datetime-local"],
+    .preview-dark input[type="month"],
+    .preview-dark input[type="week"],
+    .preview-dark input[type="color"],
+    .preview-dark input[type="file"],
+    .preview-dark input[type="range"],
+    .preview-dark textarea,
+    .preview-dark select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      padding: 6px 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .preview-dark input:focus,
+    .preview-dark textarea:focus,
+    .preview-dark select:focus { border-color: var(--accent); }
+    .preview-dark label { font-size: 0.78rem; color: var(--muted); display: block; margin-bottom: 4px; }
+    .preview-dark .form-row { margin-bottom: 10px; }
+    .preview-dark button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .preview-dark button:hover { opacity: 0.85; }
+    .preview-dark meter,
+    .preview-dark progress { width: 100%; }
+    .preview-dark output { color: var(--cyan); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
 
     /* Mobile */
     @media (max-width: 768px) {
       .sidebar { display: none; }
-      .main { padding: 24px 20px; }
+      .main { padding: 24px 16px; }
     }
 
     /* Scrollbar */
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+    /* Dialog */
+    dialog {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      padding: 24px;
+      max-width: 420px;
+      width: 90%;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    dialog::backdrop { background: rgba(0,0,0,0.7); }
+    dialog h3 { color: var(--accent); margin-bottom: 10px; }
+    dialog p { color: #94a3b8; font-size: 0.88rem; margin-bottom: 16px; }
+    dialog button { background: var(--accent); color: #fff; border: none; padding: 7px 16px; border-radius: 6px; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Details inside dark preview */
+    .preview-dark details { border: 1px solid var(--border); border-radius: 6px; }
+    .preview-dark summary { padding: 8px 12px; cursor: pointer; color: var(--accent2); font-size: 0.85rem; }
+    .preview-dark details p { padding: 8px 12px 12px; color: #94a3b8; font-size: 0.82rem; }
+
+    code { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; background: rgba(34,211,238,0.08); color: var(--cyan); padding: 1px 5px; border-radius: 4px; }
   </style>
 </head>
 <body>
 
 <div class="layout">
 
-  <!-- Sidebar -->
-  <nav class="sidebar">
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <nav class="sidebar" aria-label="Navigasi elemen">
     <div class="sidebar-brand">
       <h1>&lt;/&gt; Referensi HTML</h1>
-      <p>Elemen, atribut & contoh kode</p>
+      <p>Semua elemen, atribut &amp; contoh kode</p>
     </div>
+
+    <div class="sidebar-section">Metadata</div>
+    <a href="#meta"><span class="tag-badge">meta</span> Meta &amp; Head</a>
 
     <div class="sidebar-section">Struktur</div>
     <a href="#div" class="active"><span class="tag-badge">div</span> Division</a>
     <a href="#span"><span class="tag-badge">span</span> Span</a>
     <a href="#section"><span class="tag-badge">section</span> Section</a>
 
-    <div class="sidebar-section">Teks</div>
+    <div class="sidebar-section">Teks &amp; Judul</div>
     <a href="#p"><span class="tag-badge">p</span> Paragraph</a>
-    <a href="#h"><span class="tag-badge">h1-h6</span> Heading</a>
+    <a href="#h"><span class="tag-badge">h1–h6</span> Heading</a>
+    <a href="#blockquote"><span class="tag-badge">blockquote</span> Blockquote</a>
+    <a href="#pre"><span class="tag-badge">pre/code</span> Pre &amp; Code</a>
+    <a href="#lists"><span class="tag-badge">ul/ol/dl</span> List</a>
+    <a href="#hr"><span class="tag-badge">hr/br</span> HR &amp; BR</a>
+    <a href="#address"><span class="tag-badge">address</span> Address</a>
+
+    <div class="sidebar-section">Inline Teks</div>
     <a href="#a"><span class="tag-badge">a</span> Anchor / Link</a>
-    <a href="#strong"><span class="tag-badge">strong</span> Bold</a>
-    <a href="#em"><span class="tag-badge">em</span> Italic</a>
+    <a href="#strongem"><span class="tag-badge">strong/em</span> Strong &amp; Em</a>
+    <a href="#inline-misc"><span class="tag-badge">b/i/u/s</span> Bold/Italic…</a>
+    <a href="#abbr"><span class="tag-badge">abbr/dfn</span> Abbr &amp; Dfn</a>
+    <a href="#code-inline"><span class="tag-badge">code/kbd/samp</span> Code Inline</a>
+    <a href="#mark"><span class="tag-badge">mark</span> Mark</a>
+    <a href="#sub-sup"><span class="tag-badge">sub/sup</span> Sub &amp; Sup</a>
+    <a href="#time"><span class="tag-badge">time</span> Time &amp; Data</a>
+    <a href="#bdi-bdo"><span class="tag-badge">bdi/bdo</span> BDI &amp; BDO</a>
+    <a href="#ruby"><span class="tag-badge">ruby</span> Ruby</a>
+    <a href="#wbr"><span class="tag-badge">wbr/q</span> WBR &amp; Q</a>
+
+    <div class="sidebar-section">Konten Blok</div>
+    <a href="#figure"><span class="tag-badge">figure</span> Figure</a>
+    <a href="#details"><span class="tag-badge">details</span> Details</a>
 
     <div class="sidebar-section">Media</div>
     <a href="#img"><span class="tag-badge">img</span> Image</a>
+    <a href="#picture"><span class="tag-badge">picture</span> Picture</a>
+    <a href="#svg"><span class="tag-badge">svg</span> SVG</a>
+    <a href="#canvas"><span class="tag-badge">canvas</span> Canvas</a>
     <a href="#video"><span class="tag-badge">video</span> Video</a>
     <a href="#audio"><span class="tag-badge">audio</span> Audio</a>
-    <a href="#iframe"><span class="tag-badge">iframe</span> iFrame</a>
+    <a href="#map"><span class="tag-badge">map/area</span> Map &amp; Area</a>
 
     <div class="sidebar-section">Form</div>
     <a href="#form"><span class="tag-badge">form</span> Form</a>
@@ -371,19 +453,79 @@
     <a href="#button"><span class="tag-badge">button</span> Button</a>
     <a href="#select"><span class="tag-badge">select</span> Select</a>
     <a href="#textarea"><span class="tag-badge">textarea</span> Textarea</a>
+    <a href="#fieldset"><span class="tag-badge">fieldset</span> Fieldset</a>
+    <a href="#datalist"><span class="tag-badge">datalist</span> Datalist</a>
+    <a href="#label"><span class="tag-badge">label</span> Label</a>
+    <a href="#output"><span class="tag-badge">output</span> Output</a>
+    <a href="#progress"><span class="tag-badge">progress</span> Progress</a>
+    <a href="#meter"><span class="tag-badge">meter</span> Meter</a>
 
-    <div class="sidebar-section">List & Table</div>
-    <a href="#ul"><span class="tag-badge">ul/ol/li</span> List</a>
+    <div class="sidebar-section">Tabel</div>
     <a href="#table"><span class="tag-badge">table</span> Table</a>
 
-    <div class="sidebar-section">Semantic</div>
-    <a href="#semantic"><span class="tag-badge">nav/header</span> Semantic</a>
+    <div class="sidebar-section">Semantik</div>
+    <a href="#semantic"><span class="tag-badge">header/main…</span> Semantic HTML5</a>
+
+    <div class="sidebar-section">Scripting</div>
+    <a href="#script"><span class="tag-badge">script</span> Script</a>
+    <a href="#template"><span class="tag-badge">template</span> Template</a>
+
+    <div class="sidebar-section">Interaktif</div>
+    <a href="#dialog"><span class="tag-badge">dialog</span> Dialog</a>
+
+    <div class="sidebar-section">Embed</div>
+    <a href="#iframe"><span class="tag-badge">iframe</span> iFrame</a>
+    <a href="#embed"><span class="tag-badge">embed/object</span> Embed &amp; Object</a>
+
+    <div class="sidebar-section">Usang</div>
+    <a href="#deprecated"><span class="tag-badge">⚠</span> Deprecated</a>
   </nav>
 
-  <!-- Main -->
+  <!-- ═══════════ MAIN ═══════════ -->
   <main class="main">
     <div class="page-title">Referensi Elemen HTML</div>
-    <p class="page-sub">Panduan lengkap elemen HTML beserta fungsi, atribut, dan contoh penggunaannya.</p>
+    <p class="page-sub">Panduan lengkap <strong style="color:var(--text)">semua elemen HTML</strong> — fungsi, atribut, contoh kode, dan pratinjau langsung.</p>
+
+    <!-- ─── META ─── -->
+    <section class="elem-section" id="meta">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;title&gt; &lt;meta&gt; &lt;link&gt; &lt;style&gt; &lt;base&gt;</span>
+        <span class="elem-name">Metadata &amp; Dokumen</span>
+        <span class="elem-category cat-meta">Metadata</span>
+      </div>
+      <p class="elem-desc">Elemen-elemen ini mendefinisikan struktur dokumen dan metadata halaman. Berada di dalam <code>&lt;head&gt;</code> dan tidak tampil di layar secara langsung.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Struktur Dasar Dokumen HTML</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="v">"id"</span><span class="t">&gt;</span>
+<span class="t">&lt;head&gt;</span>
+  <span class="c">&lt;!-- Karakter encoding --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Responsif di mobile --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span> <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Deskripsi untuk SEO --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"description"</span> <span class="a">content</span>=<span class="v">"Deskripsi singkat halaman"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Open Graph (untuk share di sosmed) --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">property</span>=<span class="v">"og:title"</span> <span class="a">content</span>=<span class="v">"Judul Halaman"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Judul tab browser --&gt;</span>
+  <span class="t">&lt;title&gt;</span>Judul Halaman<span class="t">&lt;/title&gt;</span>
+  <span class="c">&lt;!-- Link ke CSS eksternal --&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"stylesheet"</span> <span class="a">href</span>=<span class="v">"style.css"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Favicon --&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"icon"</span> <span class="a">href</span>=<span class="v">"favicon.ico"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- CSS internal --&gt;</span>
+  <span class="t">&lt;style&gt;</span> body { margin: 0; } <span class="t">&lt;/style&gt;</span>
+  <span class="c">&lt;!-- Base URL relatif --&gt;</span>
+  <span class="t">&lt;base</span> <span class="a">href</span>=<span class="v">"https://example.com/"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/head&gt;</span>
+<span class="t">&lt;body&gt;</span>
+  <span class="c">&lt;!-- Konten halaman di sini --&gt;</span>
+<span class="t">&lt;/body&gt;</span>
+<span class="t">&lt;/html&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
 
     <!-- ─── DIV ─── -->
     <section class="elem-section" id="div">
@@ -392,39 +534,24 @@
         <span class="elem-name">Division / Wadah Blok</span>
         <span class="elem-category cat-structure">Struktur</span>
       </div>
-      <p class="elem-desc">Elemen container generik yang bersifat <strong>block-level</strong>. Digunakan untuk mengelompokkan elemen lain agar bisa diberi style CSS atau dimanipulasi dengan JavaScript. Tidak memiliki makna semantik.</p>
-
+      <p class="elem-desc">Elemen container generik bersifat <strong>block-level</strong>. Digunakan untuk mengelompokkan elemen lain agar bisa diberi style CSS atau dimanipulasi dengan JavaScript. Tidak memiliki makna semantik.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Pembungkus konten --&gt;</span>
-<span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"kartu"</span> <span class="a">id</span>=<span class="v">"produk-1"</span><span class="t">&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"kartu"</span> <span class="a">id</span>=<span class="v">"produk-1"</span> <span class="a">data-id</span>=<span class="v">"42"</span><span class="t">&gt;</span>
   <span class="t">&lt;h2&gt;</span>Judul Produk<span class="t">&lt;/h2&gt;</span>
-  <span class="t">&lt;p&gt;</span>Deskripsi produk di sini.<span class="t">&lt;/p&gt;</span>
-<span class="t">&lt;/div&gt;</span>
-
-<span class="c">&lt;!-- Dengan style inline --&gt;</span>
-<span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"background:#f0f0f0; padding:20px;"</span><span class="t">&gt;</span>
-  Konten dengan background
+  <span class="t">&lt;p&gt;</span>Deskripsi produk.<span class="t">&lt;/p&gt;</span>
 <span class="t">&lt;/div&gt;</span></pre>
       </div>
-
       <table class="attr-table">
         <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
-        <tr><td class="attr-name">id</td><td class="attr-type">string</td><td class="attr-desc">Identifikasi unik elemen, digunakan CSS/JS</td></tr>
+        <tr><td class="attr-name">id</td><td class="attr-type">string</td><td class="attr-desc">Identifikasi unik elemen</td></tr>
         <tr><td class="attr-name">class</td><td class="attr-type">string</td><td class="attr-desc">Nama kelas untuk styling CSS</td></tr>
-        <tr><td class="attr-name">style</td><td class="attr-type">string</td><td class="attr-desc">CSS langsung di elemen (inline style)</td></tr>
-        <tr><td class="attr-name">data-*</td><td class="attr-type">string</td><td class="attr-desc">Data custom, misal <code>data-id="5"</code></td></tr>
-        <tr><td class="attr-name">hidden</td><td class="attr-type">boolean</td><td class="attr-desc">Menyembunyikan elemen</td></tr>
+        <tr><td class="attr-name">style</td><td class="attr-type">string</td><td class="attr-desc">CSS inline langsung di elemen</td></tr>
+        <tr><td class="attr-name">data-*</td><td class="attr-type">string</td><td class="attr-desc">Atribut data kustom, misal <code>data-id="5"</code></td></tr>
+        <tr><td class="attr-name">hidden</td><td class="attr-type">boolean</td><td class="attr-desc">Menyembunyikan elemen dari tampilan</td></tr>
+        <tr><td class="attr-name">tabindex</td><td class="attr-type">number</td><td class="attr-desc">Urutan fokus keyboard</td></tr>
       </table>
-
-      <div class="tip info">
-        <span class="tip-icon">💡</span>
-        <div class="tip-text"><strong>Tips:</strong> Gunakan <code>&lt;div&gt;</code> untuk keperluan layout. Kalau kontennya punya makna khusus (navigasi, artikel, dll), lebih baik pakai elemen semantik seperti <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>.</div>
-      </div>
+      <div class="tip info"><span class="tip-icon">💡</span><div class="tip-text"><strong>Tips:</strong> Gunakan <code>&lt;div&gt;</code> untuk layout murni. Kalau kontennya punya makna khusus, pakai elemen semantik seperti <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, dll.</div></div>
     </section>
 
     <!-- ─── SPAN ─── -->
@@ -434,17 +561,12 @@
         <span class="elem-name">Span / Wadah Inline</span>
         <span class="elem-category cat-structure">Struktur</span>
       </div>
-      <p class="elem-desc">Mirip dengan <code>&lt;div&gt;</code>, tapi bersifat <strong>inline</strong> — tidak memulai baris baru. Berguna untuk memberi style pada sebagian teks di dalam paragraf.</p>
-
+      <p class="elem-desc">Mirip <code>&lt;div&gt;</code> tapi bersifat <strong>inline</strong> — tidak memulai baris baru. Berguna untuk memberi style pada sebagian teks dalam paragraf.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;p&gt;</span>
-  Harga normal <span class="t">&lt;span</span> <span class="a">style</span>=<span class="v">"text-decoration:line-through"</span><span class="t">&gt;</span>Rp50.000<span class="t">&lt;/span&gt;</span>
-  sekarang <span class="t">&lt;span</span> <span class="a">style</span>=<span class="v">"color:red; font-weight:bold"</span><span class="t">&gt;</span>Rp30.000<span class="t">&lt;/span&gt;</span>
+  Harga <span class="t">&lt;span</span> <span class="a">style</span>=<span class="v">"text-decoration:line-through;color:#aaa"</span><span class="t">&gt;</span>Rp50.000<span class="t">&lt;/span&gt;</span>
+  sekarang <span class="t">&lt;span</span> <span class="a">style</span>=<span class="v">"color:red;font-weight:bold"</span><span class="t">&gt;</span>Rp30.000<span class="t">&lt;/span&gt;</span>
 <span class="t">&lt;/p&gt;</span></pre>
       </div>
     </section>
@@ -456,22 +578,12 @@
         <span class="elem-name">Section / Bagian Konten</span>
         <span class="elem-category cat-structure">Struktur</span>
       </div>
-      <p class="elem-desc">Mengelompokkan konten yang tematik dan terkait satu sama lain. Biasanya memiliki heading di dalamnya. Berbeda dengan <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code> punya makna semantik.</p>
-
+      <p class="elem-desc">Mengelompokkan konten tematik yang terkait, biasanya memiliki heading di dalamnya. Berbeda dengan <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code> punya makna semantik.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;section&gt;</span>
   <span class="t">&lt;h2&gt;</span>Tentang Kami<span class="t">&lt;/h2&gt;</span>
   <span class="t">&lt;p&gt;</span>Kami adalah perusahaan teknologi...<span class="t">&lt;/p&gt;</span>
-<span class="t">&lt;/section&gt;</span>
-
-<span class="t">&lt;section&gt;</span>
-  <span class="t">&lt;h2&gt;</span>Produk Kami<span class="t">&lt;/h2&gt;</span>
-  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"grid"</span><span class="t">&gt;</span>...<span class="t">&lt;/div&gt;</span>
 <span class="t">&lt;/section&gt;</span></pre>
       </div>
     </section>
@@ -485,18 +597,11 @@
         <span class="elem-name">Paragraph</span>
         <span class="elem-category cat-text">Teks</span>
       </div>
-      <p class="elem-desc">Digunakan untuk membuat paragraf teks. Browser otomatis memberi jarak atas dan bawah pada setiap paragraf.</p>
-
+      <p class="elem-desc">Unit dasar teks. Browser otomatis memberi jarak atas dan bawah pada setiap paragraf.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="t">&lt;p&gt;</span>Ini adalah paragraf pertama.<span class="t">&lt;/p&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;p&gt;</span>Ini paragraf pertama.<span class="t">&lt;/p&gt;</span>
 <span class="t">&lt;p&gt;</span>Ini paragraf kedua, dengan spasi otomatis dari paragraf pertama.<span class="t">&lt;/p&gt;</span>
-
-<span class="c">&lt;!-- Paragraf dengan align --&gt;</span>
 <span class="t">&lt;p</span> <span class="a">style</span>=<span class="v">"text-align:center"</span><span class="t">&gt;</span>Teks di tengah<span class="t">&lt;/p&gt;</span></pre>
       </div>
     </section>
@@ -504,97 +609,411 @@
     <!-- ─── H1-H6 ─── -->
     <section class="elem-section" id="h">
       <div class="elem-header">
-        <span class="elem-tag">&lt;h1&gt; — &lt;h6&gt;</span>
+        <span class="elem-tag">&lt;h1&gt; — &lt;h6&gt; &amp; &lt;hgroup&gt;</span>
         <span class="elem-name">Heading / Judul</span>
         <span class="elem-category cat-text">Teks</span>
       </div>
-      <p class="elem-desc">Elemen judul dengan 6 tingkatan. <code>&lt;h1&gt;</code> paling besar dan penting (biasanya judul utama halaman), <code>&lt;h6&gt;</code> paling kecil. Penting juga untuk SEO.</p>
-
+      <p class="elem-desc">Elemen judul dengan 6 tingkatan. <code>&lt;hgroup&gt;</code> mengelompokkan judul dengan sub-judul. Penting untuk hierarki konten dan SEO.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;h1&gt;</span>Judul Halaman Utama<span class="t">&lt;/h1&gt;</span>
 <span class="t">&lt;h2&gt;</span>Sub Judul Bagian<span class="t">&lt;/h2&gt;</span>
 <span class="t">&lt;h3&gt;</span>Sub-sub Judul<span class="t">&lt;/h3&gt;</span>
 <span class="t">&lt;h4&gt;</span>Tingkat 4<span class="t">&lt;/h4&gt;</span>
 <span class="t">&lt;h5&gt;</span>Tingkat 5<span class="t">&lt;/h5&gt;</span>
-<span class="t">&lt;h6&gt;</span>Tingkat 6 (terkecil)<span class="t">&lt;/h6&gt;</span></pre>
-      </div>
+<span class="t">&lt;h6&gt;</span>Tingkat 6 (terkecil)<span class="t">&lt;/h6&gt;</span>
 
-      <div class="tip warn">
-        <span class="tip-icon">⚠️</span>
-        <div class="tip-text"><strong>Perhatian SEO:</strong> Gunakan hanya <strong>satu</strong> <code>&lt;h1&gt;</code> per halaman. Jangan melewati urutan (misal dari h1 langsung ke h4).</div>
+<span class="c">&lt;!-- hgroup: judul + sub-judul --&gt;</span>
+<span class="t">&lt;hgroup&gt;</span>
+  <span class="t">&lt;h2&gt;</span>Produk Terbaru<span class="t">&lt;/h2&gt;</span>
+  <span class="t">&lt;p&gt;</span>Diperbarui Maret 2025<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;/hgroup&gt;</span></pre>
+      </div>
+      <div class="tip warn"><span class="tip-icon">⚠️</span><div class="tip-text"><strong>SEO:</strong> Gunakan hanya satu <code>&lt;h1&gt;</code> per halaman. Jangan melompati urutan (misal dari h1 langsung ke h4).</div></div>
+    </section>
+
+    <!-- ─── BLOCKQUOTE ─── -->
+    <section class="elem-section" id="blockquote">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;blockquote&gt;</span>
+        <span class="elem-name">Kutipan Panjang</span>
+        <span class="elem-category cat-text">Teks</span>
+      </div>
+      <p class="elem-desc">Menandai kutipan dari sumber lain. Atribut <code>cite</code> menunjuk URL sumber. Berbeda dengan <code>&lt;q&gt;</code> yang untuk kutipan inline pendek.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;blockquote</span> <span class="a">cite</span>=<span class="v">"https://sumber.com/artikel"</span><span class="t">&gt;</span>
+  <span class="t">&lt;p&gt;</span>"Belajar tanpa berpikir adalah sia-sia. Berpikir tanpa belajar
+  adalah berbahaya." — Konfusius<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;/blockquote&gt;</span></pre>
       </div>
     </section>
+
+    <!-- ─── PRE / CODE ─── -->
+    <section class="elem-section" id="pre">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;pre&gt; &amp; &lt;code&gt;</span>
+        <span class="elem-name">Teks Preformat &amp; Kode</span>
+        <span class="elem-category cat-text">Teks</span>
+      </div>
+      <p class="elem-desc"><code>&lt;pre&gt;</code> mempertahankan spasi/baris baru. <code>&lt;code&gt;</code> menandai cuplikan kode. Biasanya dikombinasikan untuk blok kode multi-baris.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Inline code --&gt;</span>
+<span class="t">&lt;p&gt;</span>Gunakan fungsi <span class="t">&lt;code&gt;</span>console.log()<span class="t">&lt;/code&gt;</span> untuk debug.<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Blok kode --&gt;</span>
+<span class="t">&lt;pre&gt;&lt;code&gt;</span>
+function sapa(nama) {
+  return "Halo, " + nama;
+}
+<span class="t">&lt;/code&gt;&lt;/pre&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── LISTS ─── -->
+    <section class="elem-section" id="lists">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt; &lt;menu&gt;</span>
+        <span class="elem-name">Daftar / List</span>
+        <span class="elem-category cat-text">Teks</span>
+      </div>
+      <p class="elem-desc"><code>&lt;ul&gt;</code> = unordered (bullet), <code>&lt;ol&gt;</code> = ordered (nomor), <code>&lt;dl&gt;</code> = daftar definisi dengan <code>&lt;dt&gt;</code> (term) dan <code>&lt;dd&gt;</code> (definisi). <code>&lt;menu&gt;</code> mirip <code>&lt;ul&gt;</code> untuk daftar perintah.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Semua Jenis List</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Unordered --&gt;</span>
+<span class="t">&lt;ul&gt;</span>
+  <span class="t">&lt;li&gt;</span>HTML<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>CSS<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- Ordered --&gt;</span>
+<span class="t">&lt;ol</span> <span class="a">start</span>=<span class="v">"1"</span> <span class="a">type</span>=<span class="v">"1"</span><span class="t">&gt;</span>
+  <span class="t">&lt;li&gt;</span>Langkah pertama<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li</span> <span class="a">value</span>=<span class="v">"5"</span><span class="t">&gt;</span>Lompat ke 5<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ol&gt;</span>
+
+<span class="c">&lt;!-- Definition list --&gt;</span>
+<span class="t">&lt;dl&gt;</span>
+  <span class="t">&lt;dt&gt;</span>HTML<span class="t">&lt;/dt&gt;</span>
+  <span class="t">&lt;dd&gt;</span>HyperText Markup Language<span class="t">&lt;/dd&gt;</span>
+  <span class="t">&lt;dt&gt;</span>CSS<span class="t">&lt;/dt&gt;</span>
+  <span class="t">&lt;dd&gt;</span>Cascading Style Sheets<span class="t">&lt;/dd&gt;</span>
+<span class="t">&lt;/dl&gt;</span>
+
+<span class="c">&lt;!-- Menu (mirip ul, untuk toolbars) --&gt;</span>
+<span class="t">&lt;menu&gt;</span>
+  <span class="t">&lt;li&gt;</span>Simpan<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>Cetak<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/menu&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── HR & BR ─── -->
+    <section class="elem-section" id="hr">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;hr&gt; &amp; &lt;br&gt;</span>
+        <span class="elem-name">Pemisah &amp; Baris Baru</span>
+        <span class="elem-category cat-text">Teks</span>
+      </div>
+      <p class="elem-desc"><code>&lt;hr&gt;</code> membuat garis pemisah tematik (void element). <code>&lt;br&gt;</code> membuat baris baru di dalam inline text (void element). Keduanya tidak butuh tag penutup.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;p&gt;</span>Baris pertama<span class="t">&lt;br/&gt;</span>Baris kedua di paragraf yang sama<span class="t">&lt;/p&gt;</span>
+
+<span class="t">&lt;hr/&gt;</span>
+
+<span class="t">&lt;p&gt;</span>Konten setelah garis pemisah.<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── ADDRESS ─── -->
+    <section class="elem-section" id="address">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;address&gt;</span>
+        <span class="elem-name">Informasi Kontak</span>
+        <span class="elem-category cat-semantic">Semantik</span>
+      </div>
+      <p class="elem-desc">Menandai informasi kontak penulis atau pemilik halaman. Browser biasanya menampilkannya dalam italic. Elemen semantik — bukan sekadar container biasa.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;address&gt;</span>
+  Ditulis oleh <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:akbar@example.com"</span><span class="t">&gt;</span>Akbar<span class="t">&lt;/a&gt;</span><span class="t">&lt;br/&gt;</span>
+  Kunjungi: <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://example.com"</span><span class="t">&gt;</span>example.com<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;/address&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
 
     <!-- ─── A ─── -->
     <section class="elem-section" id="a">
       <div class="elem-header">
         <span class="elem-tag">&lt;a&gt;</span>
         <span class="elem-name">Anchor / Tautan</span>
-        <span class="elem-category cat-text">Teks</span>
+        <span class="elem-category cat-inline">Inline</span>
       </div>
       <p class="elem-desc">Membuat hyperlink ke halaman lain, file, email, nomor telepon, atau lokasi di halaman yang sama.</p>
-
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Link ke website --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://google.com"</span> <span class="a">target</span>=<span class="v">"_blank"</span><span class="t">&gt;</span>Buka Google<span class="t">&lt;/a&gt;</span>
-
-<span class="c">&lt;!-- Link ke halaman lokal --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"tentang.html"</span><span class="t">&gt;</span>Tentang Kami<span class="t">&lt;/a&gt;</span>
-
-<span class="c">&lt;!-- Link ke email --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:akbar@email.com"</span><span class="t">&gt;</span>Kirim Email<span class="t">&lt;/a&gt;</span>
-
-<span class="c">&lt;!-- Link download file --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"file.pdf"</span> <span class="a">download</span><span class="t">&gt;</span>Download PDF<span class="t">&lt;/a&gt;</span>
-
-<span class="c">&lt;!-- Lompat ke bagian di halaman yang sama --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"#kontak"</span><span class="t">&gt;</span>Ke Bagian Kontak<span class="t">&lt;/a&gt;</span></pre>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://google.com"</span> <span class="a">target</span>=<span class="v">"_blank"</span> <span class="a">rel</span>=<span class="v">"noopener noreferrer"</span><span class="t">&gt;</span>Buka Google<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:user@example.com"</span><span class="t">&gt;</span>Kirim Email<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"tel:+6281234"</span><span class="t">&gt;</span>Telepon<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"file.pdf"</span> <span class="a">download</span>=<span class="v">"dokumen.pdf"</span><span class="t">&gt;</span>Unduh PDF<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"#bagian-kontak"</span><span class="t">&gt;</span>Ke Bagian Kontak<span class="t">&lt;/a&gt;</span></pre>
       </div>
-
       <table class="attr-table">
         <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
         <tr><td class="attr-name">href</td><td class="attr-type">URL/string</td><td class="attr-desc">Tujuan link (URL, mailto:, tel:, #id)</td></tr>
-        <tr><td class="attr-name">target</td><td class="attr-type">string</td><td class="attr-desc"><code>_blank</code> = tab baru, <code>_self</code> = tab sama</td></tr>
-        <tr><td class="attr-name">download</td><td class="attr-type">boolean/string</td><td class="attr-desc">Memaksa file diunduh, bukan dibuka</td></tr>
-        <tr><td class="attr-name">rel</td><td class="attr-type">string</td><td class="attr-desc"><code>noopener noreferrer</code> untuk keamanan <code>_blank</code></td></tr>
+        <tr><td class="attr-name">target</td><td class="attr-type">string</td><td class="attr-desc"><code>_blank</code>=tab baru, <code>_self</code>=tab sama, <code>_parent</code>, <code>_top</code></td></tr>
+        <tr><td class="attr-name">download</td><td class="attr-type">string</td><td class="attr-desc">Paksa file diunduh, nilai = nama file</td></tr>
+        <tr><td class="attr-name">rel</td><td class="attr-type">string</td><td class="attr-desc"><code>noopener noreferrer</code> untuk keamanan target="_blank"</td></tr>
+        <tr><td class="attr-name">hreflang</td><td class="attr-type">string</td><td class="attr-desc">Bahasa dokumen tujuan (misal <code>id</code>, <code>en</code>)</td></tr>
       </table>
     </section>
 
     <!-- ─── STRONG & EM ─── -->
-    <section class="elem-section" id="strong">
+    <section class="elem-section" id="strongem">
       <div class="elem-header">
         <span class="elem-tag">&lt;strong&gt; &amp; &lt;em&gt;</span>
-        <span class="elem-name">Bold & Italic</span>
-        <span class="elem-category cat-text">Teks</span>
+        <span class="elem-name">Penting &amp; Penekanan Semantik</span>
+        <span class="elem-category cat-inline">Inline</span>
       </div>
-      <p class="elem-desc"><code>&lt;strong&gt;</code> menandai teks <strong>penting</strong> (tampil tebal). <code>&lt;em&gt;</code> menandai penekanan <em>emphasis</em> (tampil miring). Keduanya punya makna semantik, beda dengan <code>&lt;b&gt;</code> dan <code>&lt;i&gt;</code> yang hanya visual.</p>
-
+      <p class="elem-desc"><code>&lt;strong&gt;</code> = konten penting (tampil tebal, punya bobot semantik). <code>&lt;em&gt;</code> = penekanan ucapan (tampil miring, punya makna semantik). Berbeda dari <code>&lt;b&gt;</code> dan <code>&lt;i&gt;</code> yang hanya visual.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;p&gt;&lt;strong&gt;</span>Peringatan:<span class="t">&lt;/strong&gt;</span> Jangan lupa simpan data kamu.<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;p&gt;</span>Tekan tombol <span class="t">&lt;em&gt;</span>Simpan<span class="t">&lt;/em&gt;</span> untuk menyimpan perubahan.<span class="t">&lt;/p&gt;</span>
+<span class="c">&lt;!-- Kombinasi --&gt;</span>
+<span class="t">&lt;strong&gt;&lt;em&gt;</span>Sangat penting!<span class="t">&lt;/em&gt;&lt;/strong&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── B/I/U/S ─── -->
+    <section class="elem-section" id="inline-misc">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;b&gt; &lt;i&gt; &lt;u&gt; &lt;s&gt; &lt;del&gt; &lt;ins&gt; &lt;small&gt;</span>
+        <span class="elem-name">Gaya Teks Visual</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc">Elemen inline yang mengubah tampilan teks. <code>&lt;b&gt;</code>/<code>&lt;i&gt;</code> hanya visual (tanpa makna semantik), berbeda dengan <code>&lt;strong&gt;</code>/<code>&lt;em&gt;</code>.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;b&gt;</span>Tebal visual saja<span class="t">&lt;/b&gt;</span>
+<span class="t">&lt;i&gt;</span>Miring visual saja (istilah, judul karya)<span class="t">&lt;/i&gt;</span>
+<span class="t">&lt;u&gt;</span>Bergaris bawah<span class="t">&lt;/u&gt;</span>
+<span class="t">&lt;s&gt;</span>Dicoret (sudah tidak relevan)<span class="t">&lt;/s&gt;</span>
+<span class="t">&lt;del&gt;</span>Dihapus dari dokumen<span class="t">&lt;/del&gt;</span>
+<span class="t">&lt;ins&gt;</span>Ditambahkan ke dokumen<span class="t">&lt;/ins&gt;</span>
+<span class="t">&lt;small&gt;</span>Teks kecil, syarat &amp; ketentuan<span class="t">&lt;/small&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── ABBR ─── -->
+    <section class="elem-section" id="abbr">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;abbr&gt; &amp; &lt;dfn&gt;</span>
+        <span class="elem-name">Singkatan &amp; Definisi</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc"><code>&lt;abbr&gt;</code> menandai singkatan/akronim — atribut <code>title</code> menampilkan kepanjangannya saat hover. <code>&lt;dfn&gt;</code> menandai istilah yang sedang didefinisikan.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;p&gt;</span>
-  <span class="t">&lt;strong&gt;</span>Perhatian:<span class="t">&lt;/strong&gt;</span> Jangan lupa simpan data kamu.
+  Belajar <span class="t">&lt;abbr</span> <span class="a">title</span>=<span class="v">"HyperText Markup Language"</span><span class="t">&gt;</span>HTML<span class="t">&lt;/abbr&gt;</span> itu menyenangkan.
 <span class="t">&lt;/p&gt;</span>
 
 <span class="t">&lt;p&gt;</span>
-  Tekan tombol <span class="t">&lt;em&gt;</span>Simpan<span class="t">&lt;/em&gt;</span> untuk menyimpan perubahan.
-<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;dfn&gt;</span>Algoritma<span class="t">&lt;/dfn&gt;</span> adalah sekumpulan instruksi terstruktur untuk menyelesaikan masalah.
+<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
 
-<span class="c">&lt;!-- Bisa dikombinasi --&gt;</span>
-<span class="t">&lt;strong&gt;&lt;em&gt;</span>Sangat penting!<span class="t">&lt;/em&gt;&lt;/strong&gt;</span></pre>
+    <!-- ─── CODE/KBD/SAMP/VAR ─── -->
+    <section class="elem-section" id="code-inline">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;code&gt; &lt;kbd&gt; &lt;samp&gt; &lt;var&gt;</span>
+        <span class="elem-name">Elemen Teknis Inline</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc">Empat elemen khusus untuk konten teknis: kode, input keyboard, output program, dan variabel matematis/pemrograman.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- code: cuplikan kode --&gt;</span>
+<span class="t">&lt;p&gt;</span>Panggil fungsi <span class="t">&lt;code&gt;</span>render()<span class="t">&lt;/code&gt;</span> untuk menggambar.<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- kbd: tombol keyboard yang harus ditekan --&gt;</span>
+<span class="t">&lt;p&gt;</span>Tekan <span class="t">&lt;kbd&gt;</span>Ctrl<span class="t">&lt;/kbd&gt;</span> + <span class="t">&lt;kbd&gt;</span>S<span class="t">&lt;/kbd&gt;</span> untuk menyimpan.<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- samp: output/hasil dari program --&gt;</span>
+<span class="t">&lt;p&gt;</span>Output: <span class="t">&lt;samp&gt;</span>Error: file tidak ditemukan<span class="t">&lt;/samp&gt;</span><span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- var: variabel dalam matematika/kode --&gt;</span>
+<span class="t">&lt;p&gt;</span>Rumus: <span class="t">&lt;var&gt;</span>E<span class="t">&lt;/var&gt;</span> = <span class="t">&lt;var&gt;</span>m<span class="t">&lt;/var&gt;</span>c²<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── MARK ─── -->
+    <section class="elem-section" id="mark">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;mark&gt;</span>
+        <span class="elem-name">Sorotan / Highlight</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc">Menandai teks yang relevan/penting dalam konteks tertentu — seperti hasil pencarian yang ditemukan. Browser menampilkannya dengan latar kuning secara default.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;p&gt;</span>
+  Hasil pencarian: "...menggunakan <span class="t">&lt;mark&gt;</span>JavaScript<span class="t">&lt;/mark&gt;</span> untuk animasi..."
+<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── SUB/SUP ─── -->
+    <section class="elem-section" id="sub-sup">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;sub&gt; &amp; &lt;sup&gt;</span>
+        <span class="elem-name">Subscript &amp; Superscript</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc"><code>&lt;sub&gt;</code> = teks lebih kecil di bawah baseline (rumus kimia). <code>&lt;sup&gt;</code> = teks lebih kecil di atas baseline (pangkat, catatan kaki).</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Rumus kimia --&gt;</span>
+<span class="t">&lt;p&gt;</span>Air adalah H<span class="t">&lt;sub&gt;</span>2<span class="t">&lt;/sub&gt;</span>O<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Pangkat --&gt;</span>
+<span class="t">&lt;p&gt;</span>E = mc<span class="t">&lt;sup&gt;</span>2<span class="t">&lt;/sup&gt;</span><span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Catatan kaki --&gt;</span>
+<span class="t">&lt;p&gt;</span>Teks dengan catatan kaki<span class="t">&lt;sup&gt;</span>[1]<span class="t">&lt;/sup&gt;</span><span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── TIME / DATA / CITE ─── -->
+    <section class="elem-section" id="time">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;time&gt; &lt;data&gt; &lt;cite&gt;</span>
+        <span class="elem-name">Waktu, Data &amp; Sitasi</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc"><code>&lt;time&gt;</code> menandai tanggal/waktu yang bisa dibaca mesin. <code>&lt;data&gt;</code> mengaitkan nilai mesin dengan konten manusia. <code>&lt;cite&gt;</code> menandai judul karya yang dikutip.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- time: tanggal bisa dibaca mesin --&gt;</span>
+<span class="t">&lt;p&gt;</span>Artikel diterbitkan: <span class="t">&lt;time</span> <span class="a">datetime</span>=<span class="v">"2025-03-07"</span><span class="t">&gt;</span>7 Maret 2025<span class="t">&lt;/time&gt;</span><span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;time</span> <span class="a">datetime</span>=<span class="v">"14:30"</span><span class="t">&gt;</span>Pukul 14.30<span class="t">&lt;/time&gt;</span>
+
+<span class="c">&lt;!-- data: nilai mesin untuk konten teks --&gt;</span>
+<span class="t">&lt;data</span> <span class="a">value</span>=<span class="v">"21053"</span><span class="t">&gt;</span>Cherry Cola<span class="t">&lt;/data&gt;</span>
+
+<span class="c">&lt;!-- cite: judul karya yang dikutip --&gt;</span>
+<span class="t">&lt;p&gt;</span>Seperti disebutkan dalam <span class="t">&lt;cite&gt;</span>Clean Code<span class="t">&lt;/cite&gt;</span>.<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── BDI BDO ─── -->
+    <section class="elem-section" id="bdi-bdo">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;bdi&gt; &amp; &lt;bdo&gt;</span>
+        <span class="elem-name">Bidirectional Text</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc"><code>&lt;bdi&gt;</code> mengisolasi teks yang arahnya tidak diketahui dari konten sekitarnya (misal nama pengguna dari database). <code>&lt;bdo&gt;</code> memaksa arah teks tertentu.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- bdi: isolasi teks arab/RTL di dalam teks LTR --&gt;</span>
+<span class="t">&lt;p&gt;</span>Pengguna <span class="t">&lt;bdi&gt;</span>مرحبا<span class="t">&lt;/bdi&gt;</span> memberi komentar.<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- bdo: paksa arah tertentu --&gt;</span>
+<span class="t">&lt;bdo</span> <span class="a">dir</span>=<span class="v">"rtl"</span><span class="t">&gt;</span>Teks ini dibaca dari kanan<span class="t">&lt;/bdo&gt;</span>
+<span class="t">&lt;bdo</span> <span class="a">dir</span>=<span class="v">"ltr"</span><span class="t">&gt;</span>Left to right<span class="t">&lt;/bdo&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── RUBY ─── -->
+    <section class="elem-section" id="ruby">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;ruby&gt; &lt;rt&gt; &lt;rp&gt;</span>
+        <span class="elem-name">Ruby Annotation</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc">Digunakan untuk anotasi ruby — teks kecil di atas karakter (umum di Jepang/Cina untuk pengucapan). <code>&lt;rt&gt;</code> = teks ruby, <code>&lt;rp&gt;</code> = tanda kurung fallback.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;ruby&gt;</span>
+  漢字
+  <span class="t">&lt;rp&gt;</span>(<span class="t">&lt;/rp&gt;</span>
+  <span class="t">&lt;rt&gt;</span>Kanji<span class="t">&lt;/rt&gt;</span>
+  <span class="t">&lt;rp&gt;</span>)<span class="t">&lt;/rp&gt;</span>
+<span class="t">&lt;/ruby&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── WBR & Q ─── -->
+    <section class="elem-section" id="wbr">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;wbr&gt; &amp; &lt;q&gt;</span>
+        <span class="elem-name">Word Break &amp; Kutipan Inline</span>
+        <span class="elem-category cat-inline">Inline</span>
+      </div>
+      <p class="elem-desc"><code>&lt;wbr&gt;</code> menandai posisi potensial pemisah kata yang panjang. <code>&lt;q&gt;</code> untuk kutipan pendek inline — browser otomatis tambah tanda kutip.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- wbr: kasih peluang potong di kata panjang --&gt;</span>
+<span class="t">&lt;p&gt;</span>https://www.example<span class="t">&lt;wbr/&gt;</span>.com/halaman<span class="t">&lt;wbr/&gt;</span>/sangat/panjang<span class="t">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- q: kutipan inline --&gt;</span>
+<span class="t">&lt;p&gt;</span>Dia berkata <span class="t">&lt;q</span> <span class="a">cite</span>=<span class="v">"https://sumber.com"</span><span class="t">&gt;</span>halo dunia<span class="t">&lt;/q&gt;</span>.<span class="t">&lt;/p&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
+
+    <!-- ─── FIGURE ─── -->
+    <section class="elem-section" id="figure">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;figure&gt; &amp; &lt;figcaption&gt;</span>
+        <span class="elem-name">Gambar dengan Keterangan</span>
+        <span class="elem-category cat-semantic">Semantik</span>
+      </div>
+      <p class="elem-desc"><code>&lt;figure&gt;</code> membungkus media (gambar, diagram, kode, dll) yang direferensikan dari konten utama. <code>&lt;figcaption&gt;</code> memberi keterangan/caption.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;figure&gt;</span>
+  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"diagram.png"</span> <span class="a">alt</span>=<span class="v">"Diagram Arsitektur"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;figcaption&gt;</span>Gambar 1: Arsitektur sistem microservice<span class="t">&lt;/figcaption&gt;</span>
+<span class="t">&lt;/figure&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── DETAILS ─── -->
+    <section class="elem-section" id="details">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;details&gt; &amp; &lt;summary&gt;</span>
+        <span class="elem-name">Konten Lipat / Accordion</span>
+        <span class="elem-category cat-interactive">Interaktif</span>
+      </div>
+      <p class="elem-desc">Widget buka-tutup nativa HTML — tanpa JavaScript! <code>&lt;summary&gt;</code> adalah judul yang selalu terlihat dan bisa diklik. Tambahkan atribut <code>open</code> agar terbuka secara default.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;details&gt;</span>
+  <span class="t">&lt;summary&gt;</span>Klik untuk lihat detail<span class="t">&lt;/summary&gt;</span>
+  <span class="t">&lt;p&gt;</span>Konten tersembunyi yang muncul saat diklik.<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;/details&gt;</span>
+
+<span class="c">&lt;!-- Terbuka secara default --&gt;</span>
+<span class="t">&lt;details</span> <span class="a">open</span><span class="t">&gt;</span>
+  <span class="t">&lt;summary&gt;</span>FAQ: Cara daftar?<span class="t">&lt;/summary&gt;</span>
+  <span class="t">&lt;p&gt;</span>Klik tombol Daftar di kanan atas.<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;/details&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <details style="border:1px solid var(--border);border-radius:6px;margin-bottom:8px;">
+          <summary style="padding:10px 14px;cursor:pointer;color:var(--accent2);font-size:0.85rem;user-select:none;">Klik untuk lihat detail</summary>
+          <p style="padding:10px 14px 14px;color:#94a3b8;font-size:0.82rem;">Konten tersembunyi yang muncul saat summary diklik. Tidak perlu JavaScript!</p>
+        </details>
       </div>
     </section>
 
@@ -607,89 +1026,154 @@
         <span class="elem-name">Image / Gambar</span>
         <span class="elem-category cat-media">Media</span>
       </div>
-      <p class="elem-desc">Menampilkan gambar. Ini adalah <strong>void element</strong> — tidak punya tag penutup. Atribut <code>alt</code> wajib diisi untuk aksesibilitas dan SEO.</p>
-
+      <p class="elem-desc">Menampilkan gambar. Void element — tidak ada tag penutup. Atribut <code>alt</code> wajib untuk aksesibilitas dan SEO. <code>loading="lazy"</code> untuk performa.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Gambar lokal --&gt;</span>
-<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"foto.jpg"</span> <span class="a">alt</span>=<span class="v">"Foto Profil"</span> <span class="a">width</span>=<span class="v">"200"</span><span class="t">/&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Gambar dasar --&gt;</span>
+<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"foto.jpg"</span> <span class="a">alt</span>=<span class="v">"Deskripsi gambar"</span><span class="t">/&gt;</span>
 
-<span class="c">&lt;!-- Gambar dari URL --&gt;</span>
-<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"https://picsum.photos/400/300"</span> <span class="a">alt</span>=<span class="v">"Gambar Acak"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Dengan ukuran dan lazy load --&gt;</span>
+<span class="t">&lt;img</span>
+  <span class="a">src</span>=<span class="v">"hero.webp"</span>
+  <span class="a">alt</span>=<span class="v">"Hero banner"</span>
+  <span class="a">width</span>=<span class="v">"1200"</span>
+  <span class="a">height</span>=<span class="v">"600"</span>
+  <span class="a">loading</span>=<span class="v">"lazy"</span>
+  <span class="a">decoding</span>=<span class="v">"async"</span>
+<span class="t">/&gt;</span>
 
-<span class="c">&lt;!-- Lazy loading --&gt;</span>
-<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"besar.jpg"</span> <span class="a">alt</span>=<span class="v">"..."</span> <span class="a">loading</span>=<span class="v">"lazy"</span><span class="t">/&gt;</span>
-
-<span class="c">&lt;!-- Gambar responsif --&gt;</span>
-<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"foto.jpg"</span> <span class="a">alt</span>=<span class="v">"..."</span> <span class="a">style</span>=<span class="v">"width:100%; height:auto"</span><span class="t">/&gt;</span></pre>
+<span class="c">&lt;!-- Gambar responsif dengan srcset --&gt;</span>
+<span class="t">&lt;img</span>
+  <span class="a">src</span>=<span class="v">"gambar-800.jpg"</span>
+  <span class="a">srcset</span>=<span class="v">"gambar-400.jpg 400w, gambar-800.jpg 800w"</span>
+  <span class="a">sizes</span>=<span class="v">"(max-width:600px) 400px, 800px"</span>
+  <span class="a">alt</span>=<span class="v">"Gambar responsif"</span>
+<span class="t">/&gt;</span></pre>
       </div>
-
       <table class="attr-table">
         <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
-        <tr><td class="attr-name">src</td><td class="attr-type">URL</td><td class="attr-desc">Path atau URL gambar (wajib)</td></tr>
-        <tr><td class="attr-name">alt</td><td class="attr-type">string</td><td class="attr-desc">Teks alternatif jika gambar gagal muat (wajib)</td></tr>
-        <tr><td class="attr-name">width / height</td><td class="attr-type">number</td><td class="attr-desc">Ukuran gambar dalam pixel</td></tr>
-        <tr><td class="attr-name">loading</td><td class="attr-type">string</td><td class="attr-desc"><code>lazy</code> = muat saat mau terlihat, <code>eager</code> = langsung</td></tr>
-        <tr><td class="attr-name">onerror</td><td class="attr-type">JS</td><td class="attr-desc">Jalankan kode jika gambar gagal dimuat</td></tr>
+        <tr><td class="attr-name">src</td><td class="attr-type">URL</td><td class="attr-desc">Path/URL gambar — wajib</td></tr>
+        <tr><td class="attr-name">alt</td><td class="attr-type">string</td><td class="attr-desc">Teks alternatif — wajib untuk aksesibilitas</td></tr>
+        <tr><td class="attr-name">width/height</td><td class="attr-type">number</td><td class="attr-desc">Ukuran dalam piksel, mencegah layout shift</td></tr>
+        <tr><td class="attr-name">loading</td><td class="attr-type">string</td><td class="attr-desc"><code>lazy</code> = tunda muat hingga terlihat, <code>eager</code> = segera</td></tr>
+        <tr><td class="attr-name">srcset</td><td class="attr-type">string</td><td class="attr-desc">Daftar gambar untuk resolusi berbeda</td></tr>
+        <tr><td class="attr-name">sizes</td><td class="attr-type">string</td><td class="attr-desc">Aturan ukuran untuk srcset</td></tr>
       </table>
+    </section>
+
+    <!-- ─── PICTURE ─── -->
+    <section class="elem-section" id="picture">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;picture&gt; &amp; &lt;source&gt;</span>
+        <span class="elem-name">Gambar Adaptif</span>
+        <span class="elem-category cat-media">Media</span>
+      </div>
+      <p class="elem-desc">Memungkinkan browser memilih format/ukuran gambar terbaik berdasarkan kondisi. <code>&lt;source&gt;</code> mendefinisikan kondisi, <code>&lt;img&gt;</code> sebagai fallback.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;picture&gt;</span>
+  <span class="c">&lt;!-- Format modern (AVIF) --&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">srcset</span>=<span class="v">"hero.avif"</span> <span class="a">type</span>=<span class="v">"image/avif"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Format WebP --&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">srcset</span>=<span class="v">"hero.webp"</span> <span class="a">type</span>=<span class="v">"image/webp"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Layar kecil vs besar --&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">media</span>=<span class="v">"(min-width:800px)"</span> <span class="a">srcset</span>=<span class="v">"hero-wide.jpg"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Fallback wajib --&gt;</span>
+  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"hero.jpg"</span> <span class="a">alt</span>=<span class="v">"Hero"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/picture&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── SVG ─── -->
+    <section class="elem-section" id="svg">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;svg&gt;</span>
+        <span class="elem-name">Scalable Vector Graphics</span>
+        <span class="elem-category cat-media">Media</span>
+      </div>
+      <p class="elem-desc">Grafik vektor langsung di HTML — tidak pecah saat dizoom. Bisa berisi <code>rect</code>, <code>circle</code>, <code>path</code>, <code>text</code>, animasi, dan banyak lagi.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;svg</span> <span class="a">width</span>=<span class="v">"200"</span> <span class="a">height</span>=<span class="v">"100"</span> <span class="a">viewBox</span>=<span class="v">"0 0 200 100"</span> <span class="a">xmlns</span>=<span class="v">"http://www.w3.org/2000/svg"</span><span class="t">&gt;</span>
+  <span class="t">&lt;rect</span> <span class="a">x</span>=<span class="v">"10"</span> <span class="a">y</span>=<span class="v">"10"</span> <span class="a">width</span>=<span class="v">"180"</span> <span class="a">height</span>=<span class="v">"80"</span> <span class="a">rx</span>=<span class="v">"8"</span> <span class="a">fill</span>=<span class="v">"#4f8ef7"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;circle</span> <span class="a">cx</span>=<span class="v">"100"</span> <span class="a">cy</span>=<span class="v">"50"</span> <span class="a">r</span>=<span class="v">"25"</span> <span class="a">fill</span>=<span class="v">"white"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;text</span> <span class="a">x</span>=<span class="v">"100"</span> <span class="a">y</span>=<span class="v">"55"</span> <span class="a">text-anchor</span>=<span class="v">"middle"</span> <span class="a">fill</span>=<span class="v">"#4f8ef7"</span> <span class="a">font-size</span>=<span class="v">"14"</span><span class="t">&gt;</span>SVG<span class="t">&lt;/text&gt;</span>
+<span class="t">&lt;/svg&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="190" height="70" rx="8" fill="rgba(79,142,247,0.15)" stroke="#4f8ef7" stroke-width="1.5"/>
+          <circle cx="60" cy="40" r="20" fill="none" stroke="#22d3ee" stroke-width="2"/>
+          <polygon points="120,20 150,60 90,60" fill="none" stroke="#a78bfa" stroke-width="2"/>
+          <line x1="160" y1="20" x2="185" y2="60" stroke="#34d399" stroke-width="2"/>
+          <line x1="185" y1="20" x2="160" y2="60" stroke="#34d399" stroke-width="2"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ─── CANVAS ─── -->
+    <section class="elem-section" id="canvas">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;canvas&gt;</span>
+        <span class="elem-name">Kanvas Gambar Dinamis</span>
+        <span class="elem-category cat-media">Media</span>
+      </div>
+      <p class="elem-desc">Area piksel yang bisa digambar menggunakan JavaScript. Digunakan untuk game, grafik, animasi, dan visualisasi data. Konten fallback di dalamnya ditampilkan jika canvas tidak didukung.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;canvas</span> <span class="a">id</span>=<span class="v">"myCanvas"</span> <span class="a">width</span>=<span class="v">"400"</span> <span class="a">height</span>=<span class="v">"200"</span><span class="t">&gt;</span>
+  Browser tidak mendukung canvas.
+<span class="t">&lt;/canvas&gt;</span>
+
+<span class="t">&lt;script&gt;</span>
+  <span class="k">const</span> canvas = document.getElementById(<span class="v">'myCanvas'</span>);
+  <span class="k">const</span> ctx = canvas.getContext(<span class="v">'2d'</span>);
+  ctx.fillStyle = <span class="v">'#4f8ef7'</span>;
+  ctx.fillRect(20, 20, 150, 100);
+  ctx.beginPath();
+  ctx.arc(300, 100, 60, 0, Math.PI * 2);
+  ctx.fillStyle = <span class="v">'#a78bfa'</span>;
+  ctx.fill();
+<span class="t">&lt;/script&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <canvas id="demoCanvas" width="360" height="100" style="border:1px solid var(--border);border-radius:6px;display:block;">Browser tidak mendukung canvas.</canvas>
+      </div>
     </section>
 
     <!-- ─── VIDEO ─── -->
     <section class="elem-section" id="video">
       <div class="elem-header">
-        <span class="elem-tag">&lt;video&gt;</span>
-        <span class="elem-name">Video Player</span>
+        <span class="elem-tag">&lt;video&gt; &lt;source&gt; &lt;track&gt;</span>
+        <span class="elem-name">Video Embed</span>
         <span class="elem-category cat-media">Media</span>
       </div>
-      <p class="elem-desc">Menyematkan pemutar video langsung di halaman. Mendukung format MP4, WebM, dan OGG. Bisa dikontrol via JavaScript.</p>
-
+      <p class="elem-desc">Menyematkan video langsung. Gunakan beberapa <code>&lt;source&gt;</code> untuk format berbeda. <code>&lt;track&gt;</code> untuk subtitle/caption.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Video dasar --&gt;</span>
-<span class="t">&lt;video</span> <span class="a">src</span>=<span class="v">"video.mp4"</span> <span class="a">controls</span><span class="t">&gt;&lt;/video&gt;</span>
-
-<span class="c">&lt;!-- Video dengan opsi lengkap --&gt;</span>
-<span class="t">&lt;video</span>
-  <span class="a">width</span>=<span class="v">"640"</span>
-  <span class="a">height</span>=<span class="v">"360"</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;video</span>
   <span class="a">controls</span>
-  <span class="a">autoplay</span>
+  <span class="a">width</span>=<span class="v">"720"</span>
+  <span class="a">height</span>=<span class="v">"405"</span>
+  <span class="a">poster</span>=<span class="v">"thumbnail.jpg"</span>
+  <span class="a">preload</span>=<span class="v">"metadata"</span>
   <span class="a">muted</span>
+  <span class="a">autoplay</span>
   <span class="a">loop</span>
-  <span class="a">poster</span>=<span class="v">"thumbnail.jpg"</span><span class="t">&gt;</span>
+<span class="t">&gt;</span>
   <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.mp4"</span>  <span class="a">type</span>=<span class="v">"video/mp4"</span><span class="t">/&gt;</span>
   <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.webm"</span> <span class="a">type</span>=<span class="v">"video/webm"</span><span class="t">/&gt;</span>
-  Browser kamu tidak mendukung video.
-<span class="t">&lt;/video&gt;</span>
-
-<span class="c">&lt;!-- Kontrol via JavaScript --&gt;</span>
-<span class="t">&lt;video</span> <span class="a">id</span>=<span class="v">"myVid"</span> <span class="a">src</span>=<span class="v">"video.mp4"</span><span class="t">&gt;&lt;/video&gt;</span>
-<span class="t">&lt;button</span> <span class="a">onclick</span>=<span class="v">"document.getElementById('myVid').play()"</span><span class="t">&gt;</span>Play<span class="t">&lt;/button&gt;</span>
-<span class="t">&lt;button</span> <span class="a">onclick</span>=<span class="v">"document.getElementById('myVid').pause()"</span><span class="t">&gt;</span>Pause<span class="t">&lt;/button&gt;</span></pre>
-      </div>
-
-      <table class="attr-table">
-        <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
-        <tr><td class="attr-name">src</td><td class="attr-type">URL</td><td class="attr-desc">Path file video</td></tr>
-        <tr><td class="attr-name">controls</td><td class="attr-type">boolean</td><td class="attr-desc">Tampilkan kontrol play/pause/volume</td></tr>
-        <tr><td class="attr-name">autoplay</td><td class="attr-type">boolean</td><td class="attr-desc">Putar otomatis saat halaman dimuat</td></tr>
-        <tr><td class="attr-name">muted</td><td class="attr-type">boolean</td><td class="attr-desc">Mulai tanpa suara (wajib jika pakai autoplay)</td></tr>
-        <tr><td class="attr-name">loop</td><td class="attr-type">boolean</td><td class="attr-desc">Ulangi video dari awal setelah selesai</td></tr>
-        <tr><td class="attr-name">poster</td><td class="attr-type">URL</td><td class="attr-desc">Gambar thumbnail sebelum video diputar</td></tr>
-        <tr><td class="attr-name">preload</td><td class="attr-type">string</td><td class="attr-desc"><code>none</code> / <code>metadata</code> / <code>auto</code></td></tr>
-      </table>
-
-      <div class="tip info">
-        <span class="tip-icon">💡</span>
-        <div class="tip-text"><strong>Tips:</strong> Gunakan <code>&lt;source&gt;</code> di dalam <code>&lt;video&gt;</code> untuk menyediakan beberapa format. Browser akan memilih yang didukungnya.</div>
+  <span class="t">&lt;track</span>
+    <span class="a">kind</span>=<span class="v">"subtitles"</span>
+    <span class="a">src</span>=<span class="v">"subtitle-id.vtt"</span>
+    <span class="a">srclang</span>=<span class="v">"id"</span>
+    <span class="a">label</span>=<span class="v">"Indonesia"</span>
+    <span class="a">default</span>
+  <span class="t">/&gt;</span>
+  Browser tidak mendukung video.
+<span class="t">&lt;/video&gt;</span></pre>
       </div>
     </section>
 
@@ -697,58 +1181,39 @@
     <section class="elem-section" id="audio">
       <div class="elem-header">
         <span class="elem-tag">&lt;audio&gt;</span>
-        <span class="elem-name">Audio Player</span>
+        <span class="elem-name">Audio Embed</span>
         <span class="elem-category cat-media">Media</span>
       </div>
-      <p class="elem-desc">Menyematkan pemutar audio. Mendukung MP3, OGG, dan WAV. Cara penggunaannya mirip dengan <code>&lt;video&gt;</code>.</p>
-
+      <p class="elem-desc">Menyematkan audio langsung di halaman. Gunakan beberapa <code>&lt;source&gt;</code> untuk kompatibilitas format lintas browser.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="t">&lt;audio</span> <span class="a">controls</span><span class="t">&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"lagu.mp3"</span> <span class="a">type</span>=<span class="v">"audio/mpeg"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"lagu.ogg"</span> <span class="a">type</span>=<span class="v">"audio/ogg"</span><span class="t">/&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;audio</span> <span class="a">controls</span> <span class="a">preload</span>=<span class="v">"auto"</span><span class="t">&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"lagu.mp3"</span>  <span class="a">type</span>=<span class="v">"audio/mpeg"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"lagu.ogg"</span>  <span class="a">type</span>=<span class="v">"audio/ogg"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"lagu.webm"</span> <span class="a">type</span>=<span class="v">"audio/webm"</span><span class="t">/&gt;</span>
   Browser tidak mendukung audio.
-<span class="t">&lt;/audio&gt;</span>
-
-<span class="c">&lt;!-- Background music (autoplay perlu muted) --&gt;</span>
-<span class="t">&lt;audio</span> <span class="a">src</span>=<span class="v">"bgm.mp3"</span> <span class="a">autoplay</span> <span class="a">loop</span> <span class="a">muted</span><span class="t">&gt;&lt;/audio&gt;</span></pre>
+<span class="t">&lt;/audio&gt;</span></pre>
       </div>
     </section>
 
-    <!-- ─── IFRAME ─── -->
-    <section class="elem-section" id="iframe">
+    <!-- ─── MAP & AREA ─── -->
+    <section class="elem-section" id="map">
       <div class="elem-header">
-        <span class="elem-tag">&lt;iframe&gt;</span>
-        <span class="elem-name">Inline Frame</span>
+        <span class="elem-tag">&lt;map&gt; &amp; &lt;area&gt;</span>
+        <span class="elem-name">Image Map</span>
         <span class="elem-category cat-media">Media</span>
       </div>
-      <p class="elem-desc">Menyematkan halaman web lain, video YouTube, peta Google Maps, atau konten eksternal lainnya di dalam halaman kamu.</p>
-
+      <p class="elem-desc">Membuat area klik berbeda di dalam satu gambar. <code>&lt;map&gt;</code> mendefinisikan peta, <code>&lt;area&gt;</code> mendefinisikan setiap zona yang bisa diklik.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Embed YouTube --&gt;</span>
-<span class="t">&lt;iframe</span>
-  <span class="a">width</span>=<span class="v">"560"</span>
-  <span class="a">height</span>=<span class="v">"315"</span>
-  <span class="a">src</span>=<span class="v">"https://www.youtube.com/embed/VIDEO_ID"</span>
-  <span class="a">allowfullscreen</span><span class="t">&gt;
-&lt;/iframe&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"peta.png"</span> <span class="a">usemap</span>=<span class="v">"#petaku"</span> <span class="a">alt</span>=<span class="v">"Peta Interaktif"</span><span class="t">/&gt;</span>
 
-<span class="c">&lt;!-- Embed Google Maps --&gt;</span>
-<span class="t">&lt;iframe</span>
-  <span class="a">src</span>=<span class="v">"https://maps.google.com/maps?q=Jakarta&amp;output=embed"</span>
-  <span class="a">width</span>=<span class="v">"100%"</span>
-  <span class="a">height</span>=<span class="v">"400"</span>
-  <span class="a">style</span>=<span class="v">"border:0"</span><span class="t">&gt;
-&lt;/iframe&gt;</span></pre>
+<span class="t">&lt;map</span> <span class="a">name</span>=<span class="v">"petaku"</span><span class="t">&gt;</span>
+  <span class="c">&lt;!-- shape: rect, circle, poly --&gt;</span>
+  <span class="t">&lt;area</span> <span class="a">shape</span>=<span class="v">"rect"</span>   <span class="a">coords</span>=<span class="v">"0,0,100,100"</span>     <span class="a">href</span>=<span class="v">"zona-a.html"</span> <span class="a">alt</span>=<span class="v">"Zona A"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;area</span> <span class="a">shape</span>=<span class="v">"circle"</span> <span class="a">coords</span>=<span class="v">"200,150,50"</span>       <span class="a">href</span>=<span class="v">"zona-b.html"</span> <span class="a">alt</span>=<span class="v">"Zona B"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;area</span> <span class="a">shape</span>=<span class="v">"poly"</span>   <span class="a">coords</span>=<span class="v">"300,10,380,80,260,80"</span> <span class="a">href</span>=<span class="v">"zona-c.html"</span> <span class="a">alt</span>=<span class="v">"Zona C"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/map&gt;</span></pre>
       </div>
     </section>
 
@@ -761,26 +1226,26 @@
         <span class="elem-name">Form / Formulir</span>
         <span class="elem-category cat-form">Form</span>
       </div>
-      <p class="elem-desc">Wadah untuk elemen input. Mengatur ke mana dan bagaimana data dikirim ke server.</p>
-
+      <p class="elem-desc">Wadah untuk semua elemen input. Mengumpulkan data pengguna dan mengirimnya ke server. Atribut <code>action</code> menentukan tujuan, <code>method</code> menentukan cara pengiriman.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="t">&lt;form</span> <span class="a">action</span>=<span class="v">"/kirim"</span> <span class="a">method</span>=<span class="v">"POST"</span><span class="t">&gt;</span>
-  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"nama"</span><span class="t">&gt;</span>Nama:<span class="t">&lt;/label&gt;</span>
-  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"nama"</span> <span class="a">name</span>=<span class="v">"nama"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span>Kirim<span class="t">&lt;/button&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;form</span>
+  <span class="a">action</span>=<span class="v">"/kirim"</span>
+  <span class="a">method</span>=<span class="v">"POST"</span>
+  <span class="a">enctype</span>=<span class="v">"multipart/form-data"</span>
+  <span class="a">autocomplete</span>=<span class="v">"on"</span>
+  <span class="a">novalidate</span>
+<span class="t">&gt;</span>
+  ...input fields...
 <span class="t">&lt;/form&gt;</span></pre>
       </div>
-
       <table class="attr-table">
         <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
         <tr><td class="attr-name">action</td><td class="attr-type">URL</td><td class="attr-desc">URL tujuan pengiriman data</td></tr>
-        <tr><td class="attr-name">method</td><td class="attr-type">string</td><td class="attr-desc"><code>GET</code> (URL) atau <code>POST</code> (body request)</td></tr>
+        <tr><td class="attr-name">method</td><td class="attr-type">string</td><td class="attr-desc"><code>GET</code> (di URL) atau <code>POST</code> (di body)</td></tr>
         <tr><td class="attr-name">enctype</td><td class="attr-type">string</td><td class="attr-desc"><code>multipart/form-data</code> untuk upload file</td></tr>
+        <tr><td class="attr-name">autocomplete</td><td class="attr-type">string</td><td class="attr-desc"><code>on</code>/<code>off</code> — saran pengisian otomatis</td></tr>
+        <tr><td class="attr-name">novalidate</td><td class="attr-type">boolean</td><td class="attr-desc">Nonaktifkan validasi HTML bawaan</td></tr>
       </table>
     </section>
 
@@ -791,44 +1256,53 @@
         <span class="elem-name">Input / Kolom Isian</span>
         <span class="elem-category cat-form">Form</span>
       </div>
-      <p class="elem-desc">Elemen input serbaguna. Perilakunya berubah sesuai atribut <code>type</code>. Void element (tidak ada tag penutup).</p>
-
+      <p class="elem-desc">Elemen input serbaguna. Perilakunya berubah total sesuai <code>type</code>. Void element (tidak ada tag penutup). Tersedia 22+ tipe input berbeda.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Berbagai Tipe Input</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Teks biasa --&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span>     <span class="a">placeholder</span>=<span class="v">"Masukkan nama"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span>    <span class="a">placeholder</span>=<span class="v">"email@contoh.com"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"password"</span> <span class="a">placeholder</span>=<span class="v">"Kata sandi"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"number"</span>   <span class="a">min</span>=<span class="v">"0"</span> <span class="a">max</span>=<span class="v">"100"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"tel"</span>      <span class="a">placeholder</span>=<span class="v">"08xx"</span><span class="t">/&gt;</span>
-
-<span class="c">&lt;!-- Pilihan --&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"checkbox"</span> <span class="a">id</span>=<span class="v">"setuju"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"radio"</span>    <span class="a">name</span>=<span class="v">"gender"</span> <span class="a">value</span>=<span class="v">"pria"</span><span class="t">/&gt;</span>
-
-<span class="c">&lt;!-- Lainnya --&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Semua Tipe Input</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Teks --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span>           <span class="a">placeholder</span>=<span class="v">"Nama lengkap"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span>          <span class="a">placeholder</span>=<span class="v">"user@email.com"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"password"</span>       <span class="a">placeholder</span>=<span class="v">"Kata sandi"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"search"</span>         <span class="a">placeholder</span>=<span class="v">"Cari..."</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"url"</span>            <span class="a">placeholder</span>=<span class="v">"https://..."</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"tel"</span>            <span class="a">placeholder</span>=<span class="v">"08xx-xxxx"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Angka --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"number"</span>         <span class="a">min</span>=<span class="v">"0"</span> <span class="a">max</span>=<span class="v">"100"</span> <span class="a">step</span>=<span class="v">"1"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"range"</span>          <span class="a">min</span>=<span class="v">"0"</span> <span class="a">max</span>=<span class="v">"100"</span> <span class="a">value</span>=<span class="v">"50"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Tanggal & Waktu --&gt;</span>
 <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"date"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"color"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"range"</span>    <span class="a">min</span>=<span class="v">"0"</span> <span class="a">max</span>=<span class="v">"100"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"file"</span>     <span class="a">accept</span>=<span class="v">"image/*"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"hidden"</span>   <span class="a">value</span>=<span class="v">"data-tersembunyi"</span><span class="t">/&gt;</span></pre>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"time"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"datetime-local"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"month"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"week"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Picker --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"color"</span>          <span class="a">value</span>=<span class="v">"#4f8ef7"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"file"</span>           <span class="a">accept</span>=<span class="v">"image/*"</span> <span class="a">multiple</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Pilihan --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"checkbox"</span>       <span class="a">checked</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"radio"</span>          <span class="a">name</span>=<span class="v">"grup"</span> <span class="a">value</span>=<span class="v">"a"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Tombol --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"submit"</span>         <span class="a">value</span>=<span class="v">"Kirim"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"reset"</span>          <span class="a">value</span>=<span class="v">"Reset"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"button"</span>         <span class="a">value</span>=<span class="v">"Klik"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"image"</span>          <span class="a">src</span>=<span class="v">"tombol.png"</span> <span class="a">alt</span>=<span class="v">"Kirim"</span><span class="t">/&gt;</span>
+<span class="c">&lt;!-- Tersembunyi --&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"hidden"</span>         <span class="a">name</span>=<span class="v">"token"</span> <span class="a">value</span>=<span class="v">"abc123"</span><span class="t">/&gt;</span></pre>
       </div>
-
-      <table class="attr-table">
-        <tr><th>Atribut</th><th>Tipe</th><th>Keterangan</th></tr>
-        <tr><td class="attr-name">type</td><td class="attr-type">string</td><td class="attr-desc">Jenis input (text, email, password, number, dll)</td></tr>
-        <tr><td class="attr-name">name</td><td class="attr-type">string</td><td class="attr-desc">Nama field, dikirim bersama data form</td></tr>
-        <tr><td class="attr-name">value</td><td class="attr-type">string</td><td class="attr-desc">Nilai default input</td></tr>
-        <tr><td class="attr-name">placeholder</td><td class="attr-type">string</td><td class="attr-desc">Teks panduan saat input kosong</td></tr>
-        <tr><td class="attr-name">required</td><td class="attr-type">boolean</td><td class="attr-desc">Wajib diisi sebelum form dikirim</td></tr>
-        <tr><td class="attr-name">disabled</td><td class="attr-type">boolean</td><td class="attr-desc">Menonaktifkan input</td></tr>
-        <tr><td class="attr-name">readonly</td><td class="attr-type">boolean</td><td class="attr-desc">Hanya bisa dibaca, tidak bisa diedit</td></tr>
-        <tr><td class="attr-name">maxlength</td><td class="attr-type">number</td><td class="attr-desc">Batas maksimal karakter</td></tr>
-      </table>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Berbagai Input</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+          <div class="form-row"><label>type="text"</label><input type="text" placeholder="Masukkan nama" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;outline:none;"/></div>
+          <div class="form-row"><label>type="email"</label><input type="email" placeholder="user@email.com" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;outline:none;"/></div>
+          <div class="form-row"><label>type="password"</label><input type="password" placeholder="Kata sandi" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;outline:none;"/></div>
+          <div class="form-row"><label>type="number"</label><input type="number" value="42" min="0" max="100" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;outline:none;"/></div>
+          <div class="form-row"><label>type="date"</label><input type="date" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;outline:none;"/></div>
+          <div class="form-row"><label>type="color"</label><input type="color" value="#4f8ef7" style="height:36px;width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:2px;"/></div>
+          <div class="form-row"><label>type="range" (0–100)</label><input type="range" min="0" max="100" value="65" style="width:100%;accent-color:var(--accent);"/></div>
+          <div class="form-row"><label>type="file"</label><input type="file" style="width:100%;font-size:0.75rem;color:var(--muted);"/></div>
+          <div class="form-row" style="display:flex;gap:16px;align-items:center;"><label style="margin:0;display:flex;align-items:center;gap:6px;"><input type="checkbox" checked style="accent-color:var(--accent);"/> Checkbox</label><label style="margin:0;display:flex;align-items:center;gap:6px;"><input type="radio" name="demoR" checked style="accent-color:var(--accent);"/> Radio</label></div>
+        </div>
+      </div>
     </section>
 
     <!-- ─── BUTTON ─── -->
@@ -838,47 +1312,30 @@
         <span class="elem-name">Tombol</span>
         <span class="elem-category cat-form">Form</span>
       </div>
-      <p class="elem-desc">Membuat tombol yang bisa diklik. Lebih fleksibel dari <code>&lt;input type="button"&gt;</code> karena bisa berisi HTML di dalamnya.</p>
-
+      <p class="elem-desc">Tombol interaktif yang bisa berisi HTML (teks, ikon, gambar). Lebih fleksibel dari <code>&lt;input type="button"&gt;</code>.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Submit form --&gt;</span>
-<span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span>Kirim<span class="t">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Tombol biasa dengan event --&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span>Kirim Form<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"reset"</span><span class="t">&gt;</span>Reset<span class="t">&lt;/button&gt;</span>
 <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"button"</span> <span class="a">onclick</span>=<span class="v">"alert('Halo!')"</span><span class="t">&gt;</span>Klik Saya<span class="t">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Tombol dengan icon (HTML di dalamnya) --&gt;</span>
-<span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"button"</span><span class="t">&gt;</span>
-  🔍 Cari
-<span class="t">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Tombol nonaktif --&gt;</span>
-<span class="t">&lt;button</span> <span class="a">disabled</span><span class="t">&gt;</span>Tidak Bisa Diklik<span class="t">&lt;/button&gt;</span></pre>
+<span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"button"</span><span class="t">&gt;</span>🔍 Cari<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;button</span> <span class="a">disabled</span><span class="t">&gt;</span>Tidak Aktif<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;button</span> <span class="a">form</span>=<span class="v">"form-id"</span> <span class="a">formaction</span>=<span class="v">"/simpan"</span><span class="t">&gt;</span>Simpan ke Server Lain<span class="t">&lt;/button&gt;</span></pre>
       </div>
     </section>
 
     <!-- ─── SELECT ─── -->
     <section class="elem-section" id="select">
       <div class="elem-header">
-        <span class="elem-tag">&lt;select&gt;</span>
+        <span class="elem-tag">&lt;select&gt; &lt;option&gt; &lt;optgroup&gt;</span>
         <span class="elem-name">Dropdown / Pilihan</span>
         <span class="elem-category cat-form">Form</span>
       </div>
-      <p class="elem-desc">Membuat menu dropdown pilihan. Setiap pilihan menggunakan tag <code>&lt;option&gt;</code>. Bisa dikelompokkan dengan <code>&lt;optgroup&gt;</code>.</p>
-
+      <p class="elem-desc">Menu dropdown pilihan. <code>&lt;option&gt;</code> untuk setiap pilihan, <code>&lt;optgroup&gt;</code> untuk pengelompokan. Tambah atribut <code>multiple</code> untuk pilihan jamak.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"kota"</span><span class="t">&gt;</span>
-  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">""</span><span class="t">&gt;</span>-- Pilih Kota --<span class="t">&lt;/option&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"kota"</span> <span class="a">required</span><span class="t">&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">""</span> <span class="a">disabled</span> <span class="a">selected</span><span class="t">&gt;</span>-- Pilih Kota --<span class="t">&lt;/option&gt;</span>
   <span class="t">&lt;optgroup</span> <span class="a">label</span>=<span class="v">"Jawa"</span><span class="t">&gt;</span>
     <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"jkt"</span><span class="t">&gt;</span>Jakarta<span class="t">&lt;/option&gt;</span>
     <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"sby"</span> <span class="a">selected</span><span class="t">&gt;</span>Surabaya<span class="t">&lt;/option&gt;</span>
@@ -888,8 +1345,8 @@
   <span class="t">&lt;/optgroup&gt;</span>
 <span class="t">&lt;/select&gt;</span>
 
-<span class="c">&lt;!-- Pilihan multiple --&gt;</span>
-<span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"hobi[]"</span> <span class="a">multiple</span><span class="t">&gt;</span>
+<span class="c">&lt;!-- Multi-select --&gt;</span>
+<span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"hobi[]"</span> <span class="a">multiple</span> <span class="a">size</span>=<span class="v">"4"</span><span class="t">&gt;</span>
   <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"coding"</span><span class="t">&gt;</span>Coding<span class="t">&lt;/option&gt;</span>
   <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"gaming"</span><span class="t">&gt;</span>Gaming<span class="t">&lt;/option&gt;</span>
 <span class="t">&lt;/select&gt;</span></pre>
@@ -903,90 +1360,210 @@
         <span class="elem-name">Area Teks Panjang</span>
         <span class="elem-category cat-form">Form</span>
       </div>
-      <p class="elem-desc">Input teks multi-baris. Cocok untuk komentar, pesan, atau deskripsi panjang. Ukuran bisa diatur pengguna (resize).</p>
-
+      <p class="elem-desc">Input teks multi-baris. Ukuran bisa diatur pengguna (resize). Berbeda dari <code>&lt;input type="text"&gt;</code>, <code>&lt;textarea&gt;</code> punya tag pembuka dan penutup.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;textarea</span>
   <span class="a">name</span>=<span class="v">"pesan"</span>
   <span class="a">rows</span>=<span class="v">"5"</span>
   <span class="a">cols</span>=<span class="v">"40"</span>
-  <span class="a">placeholder</span>=<span class="v">"Tulis pesan kamu di sini..."</span>
+  <span class="a">placeholder</span>=<span class="v">"Tulis pesan kamu..."</span>
   <span class="a">maxlength</span>=<span class="v">"500"</span>
-  <span class="a">style</span>=<span class="v">"resize:vertical"</span><span class="t">&gt;
-&lt;/textarea&gt;</span></pre>
+  <span class="a">style</span>=<span class="v">"resize:vertical"</span>
+<span class="t">&gt;&lt;/textarea&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── FIELDSET & LEGEND ─── -->
+    <section class="elem-section" id="fieldset">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;fieldset&gt; &amp; &lt;legend&gt;</span>
+        <span class="elem-name">Grup Field Form</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc"><code>&lt;fieldset&gt;</code> mengelompokkan input yang terkait dalam satu kotak. <code>&lt;legend&gt;</code> memberi judul/caption pada grup tersebut. Membantu aksesibilitas.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;fieldset&gt;</span>
+  <span class="t">&lt;legend&gt;</span>Informasi Pribadi<span class="t">&lt;/legend&gt;</span>
+  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"nama"</span><span class="t">&gt;</span>Nama:<span class="t">&lt;/label&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"nama"</span> <span class="a">name</span>=<span class="v">"nama"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/fieldset&gt;</span>
+
+<span class="c">&lt;!-- Disabled group (semua input di dalamnya nonaktif) --&gt;</span>
+<span class="t">&lt;fieldset</span> <span class="a">disabled</span><span class="t">&gt;</span>
+  <span class="t">&lt;legend&gt;</span>Premium Feature<span class="t">&lt;/legend&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">placeholder</span>=<span class="v">"Terkunci"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/fieldset&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── DATALIST ─── -->
+    <section class="elem-section" id="datalist">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;datalist&gt;</span>
+        <span class="elem-name">Saran Input Otomatis</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc">Menyediakan daftar saran untuk elemen <code>&lt;input&gt;</code>. Pengguna tetap bisa mengetik bebas, tapi mendapat saran dari daftar. Hubungkan dengan <code>list</code> + <code>id</code>.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">list</span>=<span class="v">"browser-list"</span> <span class="a">placeholder</span>=<span class="v">"Ketik browser..."</span><span class="t">/&gt;</span>
+
+<span class="t">&lt;datalist</span> <span class="a">id</span>=<span class="v">"browser-list"</span><span class="t">&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Chrome"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Firefox"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Safari"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Edge"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Brave"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/datalist&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <input type="text" list="browser-demo" placeholder="Ketik nama browser..." style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:8px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;outline:none;"/>
+        <datalist id="browser-demo">
+          <option value="Chrome"/>
+          <option value="Firefox"/>
+          <option value="Safari"/>
+          <option value="Edge"/>
+          <option value="Brave"/>
+          <option value="Opera"/>
+          <option value="Vivaldi"/>
+        </datalist>
+      </div>
+    </section>
+
+    <!-- ─── LABEL ─── -->
+    <section class="elem-section" id="label">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;label&gt;</span>
+        <span class="elem-name">Label Input</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc">Teks keterangan untuk elemen form. Saat diklik, fokus berpindah ke input terkait. Penting untuk aksesibilitas. Hubungkan dengan <code>for</code> yang sesuai <code>id</code> input.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Cara 1: for + id --&gt;</span>
+<span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"nama-pengguna"</span><span class="t">&gt;</span>Nama Pengguna<span class="t">&lt;/label&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"nama-pengguna"</span><span class="t">/&gt;</span>
+
+<span class="c">&lt;!-- Cara 2: bungkus langsung (tidak perlu for/id) --&gt;</span>
+<span class="t">&lt;label&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"checkbox"</span><span class="t">/&gt;</span>
+  Saya setuju dengan syarat dan ketentuan
+<span class="t">&lt;/label&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── OUTPUT ─── -->
+    <section class="elem-section" id="output">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;output&gt;</span>
+        <span class="elem-name">Hasil Kalkulasi</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc">Menampilkan hasil kalkulasi dari form — biasanya diperbarui lewat JavaScript. Atribut <code>for</code> menunjukkan input mana yang berkontribusi pada hasil.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;form</span> <span class="a">oninput</span>=<span class="v">"hasil.value = parseInt(a.value) + parseInt(b.value)"</span><span class="t">&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"number"</span> <span class="a">id</span>=<span class="v">"a"</span> <span class="a">value</span>=<span class="v">"5"</span><span class="t">/&gt;</span> +
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"number"</span> <span class="a">id</span>=<span class="v">"b"</span> <span class="a">value</span>=<span class="v">"3"</span><span class="t">/&gt;</span> =
+  <span class="t">&lt;output</span> <span class="a">name</span>=<span class="v">"hasil"</span> <span class="a">for</span>=<span class="v">"a b"</span><span class="t">&gt;</span>8<span class="t">&lt;/output&gt;</span>
+<span class="t">&lt;/form&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <form oninput="demoOutput.value = parseInt(demoA.value||0) + parseInt(demoB.value||0)" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <input type="number" id="demoA" value="5" style="width:70px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;outline:none;text-align:center;"/>
+          <span style="color:var(--muted);font-size:1.2rem;">+</span>
+          <input type="number" id="demoB" value="3" style="width:70px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;outline:none;text-align:center;"/>
+          <span style="color:var(--muted);font-size:1.2rem;">=</span>
+          <output id="demoOutput" name="hasil" for="demoA demoB" style="font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:1.2rem;font-weight:600;">8</output>
+        </form>
+      </div>
+    </section>
+
+    <!-- ─── PROGRESS ─── -->
+    <section class="elem-section" id="progress">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;progress&gt;</span>
+        <span class="elem-name">Bar Kemajuan</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc">Menampilkan kemajuan tugas. Tanpa atribut <code>value</code> = mode indeterminate (animasi terus). Dengan <code>value</code> dan <code>max</code> = progres tertentu.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Kemajuan tertentu: 70% --&gt;</span>
+<span class="t">&lt;progress</span> <span class="a">value</span>=<span class="v">"70"</span> <span class="a">max</span>=<span class="v">"100"</span><span class="t">&gt;</span>70%<span class="t">&lt;/progress&gt;</span>
+
+<span class="c">&lt;!-- Indeterminate (sedang loading) --&gt;</span>
+<span class="t">&lt;progress&gt;</span>Memuat...<span class="t">&lt;/progress&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau</div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Progress 70%:</p>
+        <progress value="70" max="100" style="width:100%;accent-color:var(--accent);">70%</progress>
+        <p style="font-size:0.78rem;color:var(--muted);margin:12px 0 6px;">Indeterminate:</p>
+        <progress style="width:100%;accent-color:var(--accent2);">Memuat...</progress>
+      </div>
+    </section>
+
+    <!-- ─── METER ─── -->
+    <section class="elem-section" id="meter">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;meter&gt;</span>
+        <span class="elem-name">Pengukuran Skalar</span>
+        <span class="elem-category cat-form">Form</span>
+      </div>
+      <p class="elem-desc">Menampilkan nilai skalar dalam rentang tertentu. Berbeda dari <code>&lt;progress&gt;</code> — <code>&lt;meter&gt;</code> untuk nilai yang memiliki batas optimal (misal penggunaan disk, skor).</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Penggunaan disk: 6 dari 10 GB (high=8 sudah penuh) --&gt;</span>
+<span class="t">&lt;meter</span>
+  <span class="a">value</span>=<span class="v">"6"</span>
+  <span class="a">min</span>=<span class="v">"0"</span>
+  <span class="a">max</span>=<span class="v">"10"</span>
+  <span class="a">low</span>=<span class="v">"3"</span>
+  <span class="a">high</span>=<span class="v">"8"</span>
+  <span class="a">optimum</span>=<span class="v">"2"</span>
+<span class="t">&gt;</span>6 dari 10 GB<span class="t">&lt;/meter&gt;</span>
+
+<span class="c">&lt;!-- Skor: 85 dari 100 --&gt;</span>
+<span class="t">&lt;meter</span> <span class="a">value</span>=<span class="v">"85"</span> <span class="a">min</span>=<span class="v">"0"</span> <span class="a">max</span>=<span class="v">"100"</span> <span class="a">optimum</span>=<span class="v">"100"</span><span class="t">&gt;</span>85/100<span class="t">&lt;/meter&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau</div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Penggunaan disk (6/10 GB):</p>
+        <meter value="6" min="0" max="10" low="3" high="8" optimum="2" style="width:100%;">6 dari 10 GB</meter>
+        <p style="font-size:0.78rem;color:var(--muted);margin:12px 0 6px;">Skor (85/100):</p>
+        <meter value="85" min="0" max="100" optimum="100" style="width:100%;accent-color:var(--green);">85/100</meter>
       </div>
     </section>
 
     <hr/>
 
-    <!-- ─── LIST ─── -->
-    <section class="elem-section" id="ul">
-      <div class="elem-header">
-        <span class="elem-tag">&lt;ul&gt; &lt;ol&gt; &lt;li&gt;</span>
-        <span class="elem-name">Daftar / List</span>
-        <span class="elem-category cat-table">List</span>
-      </div>
-      <p class="elem-desc"><code>&lt;ul&gt;</code> = unordered list (bullet), <code>&lt;ol&gt;</code> = ordered list (nomor), <code>&lt;li&gt;</code> = setiap item dalam list.</p>
-
-      <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="c">&lt;!-- Unordered (bullet) --&gt;</span>
-<span class="t">&lt;ul&gt;</span>
-  <span class="t">&lt;li&gt;</span>HTML<span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span>CSS<span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span>JavaScript<span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ul&gt;</span>
-
-<span class="c">&lt;!-- Ordered (nomor) --&gt;</span>
-<span class="t">&lt;ol</span> <span class="a">start</span>=<span class="v">"1"</span><span class="t">&gt;</span>
-  <span class="t">&lt;li&gt;</span>Buka browser<span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span>Ketik URL<span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span>Enter<span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ol&gt;</span>
-
-<span class="c">&lt;!-- List bersarang --&gt;</span>
-<span class="t">&lt;ul&gt;</span>
-  <span class="t">&lt;li&gt;</span>Frontend
-    <span class="t">&lt;ul&gt;</span>
-      <span class="t">&lt;li&gt;</span>HTML<span class="t">&lt;/li&gt;</span>
-      <span class="t">&lt;li&gt;</span>CSS<span class="t">&lt;/li&gt;</span>
-    <span class="t">&lt;/ul&gt;</span>
-  <span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span>Backend<span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ul&gt;</span></pre>
-      </div>
-    </section>
-
     <!-- ─── TABLE ─── -->
     <section class="elem-section" id="table">
       <div class="elem-header">
-        <span class="elem-tag">&lt;table&gt;</span>
-        <span class="elem-name">Tabel Data</span>
-        <span class="elem-category cat-table">Table</span>
+        <span class="elem-tag">&lt;table&gt; &lt;caption&gt; &lt;colgroup&gt; &lt;col&gt; &lt;thead&gt; &lt;tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</span>
+        <span class="elem-name">Tabel Data Lengkap</span>
+        <span class="elem-category cat-table">Tabel</span>
       </div>
-      <p class="elem-desc">Menampilkan data tabular. Terdiri dari baris (<code>&lt;tr&gt;</code>), sel header (<code>&lt;th&gt;</code>), dan sel data (<code>&lt;td&gt;</code>). Gunakan hanya untuk data, bukan untuk layout halaman.</p>
-
+      <p class="elem-desc">Semua elemen tabel HTML. <code>&lt;caption&gt;</code> untuk judul tabel. <code>&lt;colgroup&gt;</code>/<code>&lt;col&gt;</code> untuk styling kolom. Gunakan <code>colspan</code>/<code>rowspan</code> untuk menggabungkan sel.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Contoh Penggunaan</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
-        <pre><span class="t">&lt;table</span> <span class="a">border</span>=<span class="v">"1"</span><span class="t">&gt;</span>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Struktur Tabel Lengkap</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;table&gt;</span>
+  <span class="t">&lt;caption&gt;</span>Data Nilai Siswa<span class="t">&lt;/caption&gt;</span>
+  <span class="t">&lt;colgroup&gt;</span>
+    <span class="t">&lt;col</span> <span class="a">style</span>=<span class="v">"width:40%"</span><span class="t">/&gt;</span>
+    <span class="t">&lt;col</span> <span class="a">style</span>=<span class="v">"width:30%"</span><span class="t">/&gt;</span>
+    <span class="t">&lt;col</span> <span class="a">style</span>=<span class="v">"width:30%"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;/colgroup&gt;</span>
   <span class="t">&lt;thead&gt;</span>
     <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;th&gt;</span>Nama<span class="t">&lt;/th&gt;</span>
-      <span class="t">&lt;th&gt;</span>Nilai<span class="t">&lt;/th&gt;</span>
-      <span class="t">&lt;th&gt;</span>Keterangan<span class="t">&lt;/th&gt;</span>
+      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span>Nama<span class="t">&lt;/th&gt;</span>
+      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span>Nilai<span class="t">&lt;/th&gt;</span>
+      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span>Keterangan<span class="t">&lt;/th&gt;</span>
     <span class="t">&lt;/tr&gt;</span>
   <span class="t">&lt;/thead&gt;</span>
   <span class="t">&lt;tbody&gt;</span>
@@ -995,21 +1572,21 @@
       <span class="t">&lt;td&gt;</span>95<span class="t">&lt;/td&gt;</span>
       <span class="t">&lt;td&gt;</span>Sangat Baik<span class="t">&lt;/td&gt;</span>
     <span class="t">&lt;/tr&gt;</span>
+    <span class="t">&lt;tr&gt;</span>
+      <span class="c">&lt;!-- rowspan: gabung 2 baris --&gt;</span>
+      <span class="t">&lt;td</span> <span class="a">rowspan</span>=<span class="v">"2"</span><span class="t">&gt;</span>Tim Alpha<span class="t">&lt;/td&gt;</span>
+      <span class="t">&lt;td&gt;</span>88<span class="t">&lt;/td&gt;</span>
+      <span class="t">&lt;td&gt;</span>Baik<span class="t">&lt;/td&gt;</span>
+    <span class="t">&lt;/tr&gt;</span>
   <span class="t">&lt;/tbody&gt;</span>
   <span class="t">&lt;tfoot&gt;</span>
     <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;td</span> <span class="a">colspan</span>=<span class="v">"3"</span><span class="t">&gt;</span>Total: 1 siswa<span class="t">&lt;/td&gt;</span>
+      <span class="c">&lt;!-- colspan: gabung 3 kolom --&gt;</span>
+      <span class="t">&lt;td</span> <span class="a">colspan</span>=<span class="v">"3"</span><span class="t">&gt;</span>Rata-rata: 91.5<span class="t">&lt;/td&gt;</span>
     <span class="t">&lt;/tr&gt;</span>
   <span class="t">&lt;/tfoot&gt;</span>
 <span class="t">&lt;/table&gt;</span></pre>
       </div>
-
-      <table class="attr-table">
-        <tr><th>Atribut td/th</th><th>Tipe</th><th>Keterangan</th></tr>
-        <tr><td class="attr-name">colspan</td><td class="attr-type">number</td><td class="attr-desc">Gabung beberapa kolom menjadi satu sel</td></tr>
-        <tr><td class="attr-name">rowspan</td><td class="attr-type">number</td><td class="attr-desc">Gabung beberapa baris menjadi satu sel</td></tr>
-        <tr><td class="attr-name">scope</td><td class="attr-type">string</td><td class="attr-desc">Untuk aksesibilitas: <code>col</code> atau <code>row</code></td></tr>
-      </table>
     </section>
 
     <hr/>
@@ -1017,18 +1594,13 @@
     <!-- ─── SEMANTIC ─── -->
     <section class="elem-section" id="semantic">
       <div class="elem-header">
-        <span class="elem-tag">Elemen Semantik</span>
-        <span class="elem-name">HTML5 Structural</span>
-        <span class="elem-category cat-semantic">Semantic</span>
+        <span class="elem-tag">&lt;header&gt; &lt;nav&gt; &lt;main&gt; &lt;article&gt; &lt;section&gt; &lt;aside&gt; &lt;footer&gt;</span>
+        <span class="elem-name">HTML5 Semantik</span>
+        <span class="elem-category cat-semantic">Semantik</span>
       </div>
-      <p class="elem-desc">Elemen-elemen ini memberi <strong>makna</strong> pada struktur halaman — bukan hanya visual. Membantu SEO, aksesibilitas (screen reader), dan keterbacaan kode.</p>
-
+      <p class="elem-desc">Elemen-elemen ini memberi <strong>makna</strong> pada struktur halaman — membantu SEO, aksesibilitas (screen reader), dan keterbacaan kode. Gunakan sebagai pengganti <code>&lt;div&gt;</code> yang tepat.</p>
       <div class="code-block">
-        <div class="code-header">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <span>Struktur Halaman Semantik</span>
-          <button class="copy-btn" onclick="copyCode(this)">Salin</button>
-        </div>
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Struktur Halaman Semantik</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;header&gt;</span>
   <span class="t">&lt;nav&gt;</span>
     <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/"</span><span class="t">&gt;</span>Beranda<span class="t">&lt;/a&gt;</span>
@@ -1045,31 +1617,245 @@
 
   <span class="t">&lt;aside&gt;</span>
     <span class="t">&lt;h2&gt;</span>Artikel Terkait<span class="t">&lt;/h2&gt;</span>
+    <span class="t">&lt;ul&gt;</span><span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#"</span><span class="t">&gt;</span>Artikel 1<span class="t">&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
   <span class="t">&lt;/aside&gt;</span>
 <span class="t">&lt;/main&gt;</span>
 
 <span class="t">&lt;footer&gt;</span>
+  <span class="t">&lt;address&gt;</span>Kontak: <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:hi@example.com"</span><span class="t">&gt;</span>hi@example.com<span class="t">&lt;/a&gt;&lt;/address&gt;</span>
   <span class="t">&lt;p&gt;</span>&amp;copy; 2025 Website Saya<span class="t">&lt;/p&gt;</span>
 <span class="t">&lt;/footer&gt;</span></pre>
       </div>
-
       <table class="attr-table">
         <tr><th>Elemen</th><th>Fungsi</th></tr>
         <tr><td class="attr-name">&lt;header&gt;</td><td class="attr-desc">Header halaman atau section (logo, nav utama)</td></tr>
-        <tr><td class="attr-name">&lt;nav&gt;</td><td class="attr-desc">Blok navigasi / menu</td></tr>
+        <tr><td class="attr-name">&lt;nav&gt;</td><td class="attr-desc">Blok navigasi/menu utama</td></tr>
         <tr><td class="attr-name">&lt;main&gt;</td><td class="attr-desc">Konten utama halaman (satu per halaman)</td></tr>
         <tr><td class="attr-name">&lt;article&gt;</td><td class="attr-desc">Konten mandiri: artikel, posting, komentar</td></tr>
-        <tr><td class="attr-name">&lt;aside&gt;</td><td class="attr-desc">Konten samping / sidebar</td></tr>
+        <tr><td class="attr-name">&lt;section&gt;</td><td class="attr-desc">Pengelompokan konten tematik dengan heading</td></tr>
+        <tr><td class="attr-name">&lt;aside&gt;</td><td class="attr-desc">Konten samping/sidebar, terkait konten utama</td></tr>
         <tr><td class="attr-name">&lt;footer&gt;</td><td class="attr-desc">Footer halaman atau section</td></tr>
-        <tr><td class="attr-name">&lt;time&gt;</td><td class="attr-desc">Tanggal/waktu dengan format mesin di <code>datetime</code></td></tr>
-        <tr><td class="attr-name">&lt;figure&gt;</td><td class="attr-desc">Pembungkus media (gambar, diagram) dengan keterangan</td></tr>
-        <tr><td class="attr-name">&lt;figcaption&gt;</td><td class="attr-desc">Keterangan/caption untuk &lt;figure&gt;</td></tr>
+        <tr><td class="attr-name">&lt;figure&gt; + &lt;figcaption&gt;</td><td class="attr-desc">Media dengan keterangan</td></tr>
+        <tr><td class="attr-name">&lt;address&gt;</td><td class="attr-desc">Informasi kontak penulis/pemilik</td></tr>
+        <tr><td class="attr-name">&lt;hgroup&gt;</td><td class="attr-desc">Kelompok heading + sub-heading</td></tr>
       </table>
+      <div class="tip good"><span class="tip-icon">✅</span><div class="tip-text"><strong>Best Practice:</strong> Gunakan elemen semantik sebisa mungkin. Jangan pakai <code>&lt;div&gt;</code> untuk semua hal — gunakan <code>&lt;nav&gt;</code> untuk navigasi, <code>&lt;article&gt;</code> untuk artikel, <code>&lt;footer&gt;</code> untuk footer.</div></div>
+    </section>
 
-      <div class="tip good">
-        <span class="tip-icon">✅</span>
-        <div class="tip-text"><strong>Best Practice:</strong> Gunakan elemen semantik sebisa mungkin. Jangan pakai <code>&lt;div&gt;</code> untuk semua hal — gunakan <code>&lt;nav&gt;</code> untuk navigasi, <code>&lt;article&gt;</code> untuk artikel, <code>&lt;footer&gt;</code> untuk footer.</div>
+    <hr/>
+
+    <!-- ─── SCRIPT ─── -->
+    <section class="elem-section" id="script">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;script&gt; &amp; &lt;noscript&gt;</span>
+        <span class="elem-name">Skrip JavaScript</span>
+        <span class="elem-category cat-scripting">Scripting</span>
       </div>
+      <p class="elem-desc"><code>&lt;script&gt;</code> untuk menyematkan atau menghubungkan JavaScript. <code>&lt;noscript&gt;</code> ditampilkan saat JavaScript dinonaktifkan di browser.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- JS eksternal (dianjurkan) --&gt;</span>
+<span class="t">&lt;script</span> <span class="a">src</span>=<span class="v">"app.js"</span> <span class="a">defer</span><span class="t">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- JS inline --&gt;</span>
+<span class="t">&lt;script&gt;</span>
+  console.log('Halo dari HTML!');
+  document.getElementById('judul').textContent = 'Diubah JS';
+<span class="t">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Module ES --&gt;</span>
+<span class="t">&lt;script</span> <span class="a">type</span>=<span class="v">"module"</span> <span class="a">src</span>=<span class="v">"main.js"</span><span class="t">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Fallback jika JS mati --&gt;</span>
+<span class="t">&lt;noscript&gt;</span>
+  <span class="t">&lt;p&gt;</span>Aktifkan JavaScript untuk pengalaman penuh.<span class="t">&lt;/p&gt;</span>
+<span class="t">&lt;/noscript&gt;</span></pre>
+      </div>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Keterangan</th></tr>
+        <tr><td class="attr-name">src</td><td class="attr-desc">URL file JS eksternal</td></tr>
+        <tr><td class="attr-name">defer</td><td class="attr-desc">Eksekusi setelah HTML selesai di-parse (tanpa blokir render)</td></tr>
+        <tr><td class="attr-name">async</td><td class="attr-desc">Eksekusi sesegera mungkin secara asinkron</td></tr>
+        <tr><td class="attr-name">type</td><td class="attr-desc"><code>module</code> untuk ES modules, kosong/omit = script biasa</td></tr>
+        <tr><td class="attr-name">crossorigin</td><td class="attr-desc">Pengaturan CORS untuk script dari domain lain</td></tr>
+      </table>
+    </section>
+
+    <!-- ─── TEMPLATE ─── -->
+    <section class="elem-section" id="template">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;template&gt; &amp; &lt;slot&gt;</span>
+        <span class="elem-name">Template &amp; Web Component</span>
+        <span class="elem-category cat-scripting">Scripting</span>
+      </div>
+      <p class="elem-desc"><code>&lt;template&gt;</code> menyimpan HTML yang tidak dirender — hanya bisa digunakan lewat JavaScript (<code>cloneNode</code>). <code>&lt;slot&gt;</code> mendefinisikan titik penyisipan konten di dalam Web Component / Shadow DOM.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Template: tidak tampil di halaman --&gt;</span>
+<span class="t">&lt;template</span> <span class="a">id</span>=<span class="v">"kartu-template"</span><span class="t">&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"kartu"</span><span class="t">&gt;</span>
+    <span class="t">&lt;h3</span> <span class="a">class</span>=<span class="v">"judul"</span><span class="t">&gt;&lt;/h3&gt;</span>
+    <span class="t">&lt;p</span> <span class="a">class</span>=<span class="v">"isi"</span><span class="t">&gt;&lt;/p&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/template&gt;</span>
+
+<span class="c">&lt;!-- Gunakan via JavaScript --&gt;</span>
+<span class="t">&lt;script&gt;</span>
+  <span class="k">const</span> tmpl = document.getElementById(<span class="v">'kartu-template'</span>);
+  <span class="k">const</span> clone = tmpl.content.cloneNode(<span class="k">true</span>);
+  clone.querySelector(<span class="v">'.judul'</span>).textContent = <span class="v">'Judul Kartu'</span>;
+  document.body.appendChild(clone);
+<span class="t">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Slot: di dalam custom element / shadow DOM --&gt;</span>
+<span class="t">&lt;template</span> <span class="a">id</span>=<span class="v">"my-card"</span><span class="t">&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"wrapper"</span><span class="t">&gt;</span>
+    <span class="t">&lt;slot</span> <span class="a">name</span>=<span class="v">"judul"</span><span class="t">&gt;</span>Default Judul<span class="t">&lt;/slot&gt;</span>
+    <span class="t">&lt;slot&gt;&lt;/slot&gt;</span>  <span class="c">&lt;!-- default slot --&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/template&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
+
+    <!-- ─── DIALOG ─── -->
+    <section class="elem-section" id="dialog">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;dialog&gt;</span>
+        <span class="elem-name">Modal / Dialog Nativa</span>
+        <span class="elem-category cat-interactive">Interaktif</span>
+      </div>
+      <p class="elem-desc">Elemen dialog/modal nativa HTML — tanpa library! Metode <code>.show()</code> untuk modal non-blocking, <code>.showModal()</code> untuk modal dengan backdrop. <code>.close()</code> untuk menutup.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="t">&lt;button</span> <span class="a">onclick</span>=<span class="v">"document.getElementById('myModal').showModal()"</span><span class="t">&gt;</span>
+  Buka Dialog
+<span class="t">&lt;/button&gt;</span>
+
+<span class="t">&lt;dialog</span> <span class="a">id</span>=<span class="v">"myModal"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h3&gt;</span>Judul Dialog<span class="t">&lt;/h3&gt;</span>
+  <span class="t">&lt;p&gt;</span>Ini adalah konten modal nativa HTML.<span class="t">&lt;/p&gt;</span>
+  <span class="c">&lt;!-- method="dialog" untuk close via form submit --&gt;</span>
+  <span class="t">&lt;form</span> <span class="a">method</span>=<span class="v">"dialog"</span><span class="t">&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">value</span>=<span class="v">"batal"</span><span class="t">&gt;</span>Batal<span class="t">&lt;/button&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">value</span>=<span class="v">"oke"</span><span class="t">&gt;</span>OK<span class="t">&lt;/button&gt;</span>
+  <span class="t">&lt;/form&gt;</span>
+<span class="t">&lt;/dialog&gt;</span>
+
+<span class="t">&lt;script&gt;</span>
+  <span class="k">const</span> dialog = document.getElementById(<span class="v">'myModal'</span>);
+  dialog.addEventListener(<span class="v">'close'</span>, () => {
+    console.log(<span class="v">'Return value:'</span>, dialog.returnValue);
+  });
+<span class="t">&lt;/script&gt;</span></pre>
+      </div>
+      <div class="preview-dark">
+        <div class="preview-label">Pratinjau Langsung</div>
+        <button onclick="document.getElementById('demoDialog').showModal()" style="background:var(--accent);color:#fff;border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;">Buka Dialog</button>
+        <dialog id="demoDialog">
+          <h3>Dialog Nativa HTML</h3>
+          <p>Ini modal tanpa library apapun, murni HTML. Tekan Esc atau klik tombol di bawah untuk menutup.</p>
+          <form method="dialog" style="display:flex;gap:8px;justify-content:flex-end;">
+            <button value="batal" style="background:var(--surface2);color:var(--text);border:1px solid var(--border);">Batal</button>
+            <button value="oke">OK</button>
+          </form>
+        </dialog>
+      </div>
+    </section>
+
+    <hr/>
+
+    <!-- ─── IFRAME ─── -->
+    <section class="elem-section" id="iframe">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;iframe&gt;</span>
+        <span class="elem-name">Inline Frame</span>
+        <span class="elem-category cat-embed">Embed</span>
+      </div>
+      <p class="elem-desc">Menyematkan halaman web lain di dalam halaman saat ini. Digunakan untuk embed video YouTube, Google Maps, widget, dll. Gunakan <code>sandbox</code> untuk keamanan.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Embed YouTube --&gt;</span>
+<span class="t">&lt;iframe</span>
+  <span class="a">src</span>=<span class="v">"https://www.youtube.com/embed/VIDEO_ID"</span>
+  <span class="a">width</span>=<span class="v">"560"</span>
+  <span class="a">height</span>=<span class="v">"315"</span>
+  <span class="a">title</span>=<span class="v">"Video YouTube"</span>
+  <span class="a">allow</span>=<span class="v">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"</span>
+  <span class="a">allowfullscreen</span>
+  <span class="a">loading</span>=<span class="v">"lazy"</span>
+<span class="t">&gt;&lt;/iframe&gt;</span>
+
+<span class="c">&lt;!-- Iframe dengan sandbox (keamanan) --&gt;</span>
+<span class="t">&lt;iframe</span>
+  <span class="a">src</span>=<span class="v">"halaman-lain.html"</span>
+  <span class="a">sandbox</span>=<span class="v">"allow-scripts allow-same-origin"</span>
+  <span class="a">title</span>=<span class="v">"Konten aman"</span>
+<span class="t">&gt;&lt;/iframe&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ─── EMBED & OBJECT ─── -->
+    <section class="elem-section" id="embed">
+      <div class="elem-header">
+        <span class="elem-tag">&lt;embed&gt; &lt;object&gt; &lt;param&gt;</span>
+        <span class="elem-name">Konten Eksternal Embed</span>
+        <span class="elem-category cat-embed">Embed</span>
+      </div>
+      <p class="elem-desc"><code>&lt;embed&gt;</code> menyematkan konten eksternal (plugin). <code>&lt;object&gt;</code> lebih fleksibel dengan konten fallback di dalamnya. <code>&lt;param&gt;</code> memberikan parameter ke <code>&lt;object&gt;</code>.</p>
+      <div class="code-block">
+        <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- embed: PDF langsung --&gt;</span>
+<span class="t">&lt;embed</span> <span class="a">src</span>=<span class="v">"dokumen.pdf"</span> <span class="a">type</span>=<span class="v">"application/pdf"</span> <span class="a">width</span>=<span class="v">"800"</span> <span class="a">height</span>=<span class="v">"600"</span><span class="t">/&gt;</span>
+
+<span class="c">&lt;!-- object: dengan fallback --&gt;</span>
+<span class="t">&lt;object</span> <span class="a">data</span>=<span class="v">"grafik.svg"</span> <span class="a">type</span>=<span class="v">"image/svg+xml"</span> <span class="a">width</span>=<span class="v">"300"</span> <span class="a">height</span>=<span class="v">"200"</span><span class="t">&gt;</span>
+  <span class="t">&lt;param</span> <span class="a">name</span>=<span class="v">"autoplay"</span> <span class="a">value</span>=<span class="v">"true"</span><span class="t">/&gt;</span>
+  <span class="c">&lt;!-- Konten fallback jika object gagal --&gt;</span>
+  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"grafik.png"</span> <span class="a">alt</span>=<span class="v">"Grafik"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/object&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
+
+    <!-- ─── DEPRECATED ─── -->
+    <section class="elem-section" id="deprecated">
+      <div class="elem-header">
+        <span class="elem-tag">Elemen Usang / Deprecated</span>
+        <span class="elem-name">Jangan Digunakan</span>
+        <span class="elem-category cat-deprecated">Deprecated</span>
+      </div>
+      <p class="elem-desc">Elemen-elemen ini sudah dihapus dari standar HTML5 atau tidak direkomendasikan. Ditampilkan di sini sebagai referensi — <strong>jangan gunakan di proyek baru</strong>.</p>
+      <div class="tip danger"><span class="tip-icon">🚫</span><div class="tip-text"><strong>Peringatan:</strong> Elemen di bawah ini sudah deprecated/obsolete. Browser modern mungkin masih mendukungnya untuk kompatibilitas, tapi bisa berhenti kapan saja.</div></div>
+      <table class="attr-table">
+        <tr><th>Elemen</th><th>Pengganti yang Dianjurkan</th></tr>
+        <tr><td class="attr-name">&lt;acronym&gt;</td><td class="attr-desc">Gunakan <code>&lt;abbr&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;applet&gt;</td><td class="attr-desc">Gunakan <code>&lt;object&gt;</code> atau JavaScript</td></tr>
+        <tr><td class="attr-name">&lt;basefont&gt;</td><td class="attr-desc">Gunakan CSS <code>font-family</code> di <code>body</code></td></tr>
+        <tr><td class="attr-name">&lt;big&gt;</td><td class="attr-desc">Gunakan CSS <code>font-size</code></td></tr>
+        <tr><td class="attr-name">&lt;blink&gt;</td><td class="attr-desc">Gunakan CSS animasi</td></tr>
+        <tr><td class="attr-name">&lt;center&gt;</td><td class="attr-desc">Gunakan CSS <code>text-align:center</code> atau Flexbox</td></tr>
+        <tr><td class="attr-name">&lt;dir&gt;</td><td class="attr-desc">Gunakan <code>&lt;ul&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;font&gt;</td><td class="attr-desc">Gunakan CSS untuk semua styling font</td></tr>
+        <tr><td class="attr-name">&lt;frame&gt; / &lt;frameset&gt; / &lt;noframes&gt;</td><td class="attr-desc">Gunakan CSS Grid/Flex + <code>&lt;iframe&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;isindex&gt;</td><td class="attr-desc">Gunakan <code>&lt;input type="search"&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;keygen&gt;</td><td class="attr-desc">Gunakan Web Crypto API</td></tr>
+        <tr><td class="attr-name">&lt;listing&gt;</td><td class="attr-desc">Gunakan <code>&lt;pre&gt;&lt;code&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;marquee&gt;</td><td class="attr-desc">Gunakan CSS animasi <code>translateX</code></td></tr>
+        <tr><td class="attr-name">&lt;menuitem&gt;</td><td class="attr-desc">Konteks menu API dihapus dari standar</td></tr>
+        <tr><td class="attr-name">&lt;multicol&gt;</td><td class="attr-desc">Gunakan CSS <code>column-count</code></td></tr>
+        <tr><td class="attr-name">&lt;nobr&gt;</td><td class="attr-desc">Gunakan CSS <code>white-space:nowrap</code></td></tr>
+        <tr><td class="attr-name">&lt;noembed&gt;</td><td class="attr-desc">Gunakan konten fallback di dalam <code>&lt;object&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;plaintext&gt;</td><td class="attr-desc">Gunakan <code>&lt;pre&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;rb&gt; / &lt;rtc&gt;</td><td class="attr-desc">Gunakan <code>&lt;ruby&gt;</code> secara langsung</td></tr>
+        <tr><td class="attr-name">&lt;spacer&gt;</td><td class="attr-desc">Gunakan CSS <code>margin</code> atau <code>padding</code></td></tr>
+        <tr><td class="attr-name">&lt;strike&gt;</td><td class="attr-desc">Gunakan <code>&lt;s&gt;</code> atau <code>&lt;del&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;tt&gt;</td><td class="attr-desc">Gunakan <code>&lt;code&gt;</code> atau CSS <code>font-family:monospace</code></td></tr>
+        <tr><td class="attr-name">&lt;xmp&gt;</td><td class="attr-desc">Gunakan <code>&lt;pre&gt;</code></td></tr>
+        <tr><td class="attr-name">&lt;nextid&gt;</td><td class="attr-desc">Tidak pernah terstandarisasi, abaikan</td></tr>
+      </table>
     </section>
 
   </main>
@@ -1079,10 +1865,8 @@
   // Copy button
   function copyCode(btn) {
     const pre = btn.closest('.code-block').querySelector('pre');
-    // Strip HTML tags to get plain text
-    const text = pre.innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      btn.textContent = 'Tersalin!';
+    navigator.clipboard.writeText(pre.innerText).then(() => {
+      btn.textContent = 'Tersalin ✓';
       btn.classList.add('copied');
       setTimeout(() => {
         btn.textContent = 'Salin';
@@ -1100,13 +1884,58 @@
       if (entry.isIntersecting) {
         const id = entry.target.id;
         links.forEach(l => {
-          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          l.classList.remove('active');
+          if (l.getAttribute('href') === '#' + id) l.classList.add('active');
         });
       }
     });
-  }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+  }, { rootMargin: '-20% 0px -70% 0px' });
 
   sections.forEach(s => observer.observe(s));
+
+  // Canvas demo
+  const canvas = document.getElementById('demoCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#0f1117';
+    ctx.fillRect(0, 0, 360, 100);
+
+    // Grid lines
+    ctx.strokeStyle = '#1e2535';
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= 360; x += 30) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 100); ctx.stroke();
+    }
+    for (let y = 0; y <= 100; y += 20) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(360, y); ctx.stroke();
+    }
+
+    // Sine wave
+    ctx.beginPath();
+    ctx.strokeStyle = '#4f8ef7';
+    ctx.lineWidth = 2.5;
+    for (let x = 0; x <= 360; x++) {
+      const y = 50 + Math.sin(x * 0.045) * 32;
+      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Cosine wave
+    ctx.beginPath();
+    ctx.strokeStyle = '#a78bfa';
+    ctx.lineWidth = 1.5;
+    for (let x = 0; x <= 360; x++) {
+      const y = 50 + Math.cos(x * 0.07) * 18;
+      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Label
+    ctx.fillStyle = '#64748b';
+    ctx.font = '10px "JetBrains Mono", monospace';
+    ctx.fillText('<canvas> — digambar dengan JavaScript', 10, 93);
+  }
 </script>
+
 </body>
 </html>
