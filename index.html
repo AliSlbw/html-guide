@@ -477,6 +477,9 @@
     <a href="#iframe"><span class="tag-badge">iframe</span> iFrame</a>
     <a href="#embed"><span class="tag-badge">embed/object</span> Embed &amp; Object</a>
 
+    <div class="sidebar-section">Atribut Global</div>
+    <a href="#global-attrs"><span class="tag-badge">attr</span> Global Attributes</a>
+    <a href="#aria-attrs"><span class="tag-badge">aria</span> ARIA Attributes</a>
     <div class="sidebar-section">Usang</div>
     <a href="#deprecated"><span class="tag-badge">⚠</span> Deprecated</a>
   </nav>
@@ -738,7 +741,7 @@ function sapa(nama) {
       <div class="code-block">
         <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;address&gt;</span>
-  Ditulis oleh <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:akbar@example.com"</span><span class="t">&gt;</span>Akbar<span class="t">&lt;/a&gt;</span><span class="t">&lt;br/&gt;</span>
+  Ditulis oleh <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f7969c959685b7928f969a879b92d994989a">[email&#160;protected]</a>"</span><span class="t">&gt;</span>Akbar<span class="t">&lt;/a&gt;</span><span class="t">&lt;br/&gt;</span>
   Kunjungi: <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://example.com"</span><span class="t">&gt;</span>example.com<span class="t">&lt;/a&gt;</span>
 <span class="t">&lt;/address&gt;</span></pre>
       </div>
@@ -757,7 +760,7 @@ function sapa(nama) {
       <div class="code-block">
         <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Contoh Penggunaan</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://google.com"</span> <span class="a">target</span>=<span class="v">"_blank"</span> <span class="a">rel</span>=<span class="v">"noopener noreferrer"</span><span class="t">&gt;</span>Buka Google<span class="t">&lt;/a&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:user@example.com"</span><span class="t">&gt;</span>Kirim Email<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="671214021527021f060a170b024904080a">[email&#160;protected]</a>"</span><span class="t">&gt;</span>Kirim Email<span class="t">&lt;/a&gt;</span>
 <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"tel:+6281234"</span><span class="t">&gt;</span>Telepon<span class="t">&lt;/a&gt;</span>
 <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"file.pdf"</span> <span class="a">download</span>=<span class="v">"dokumen.pdf"</span><span class="t">&gt;</span>Unduh PDF<span class="t">&lt;/a&gt;</span>
 <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"#bagian-kontak"</span><span class="t">&gt;</span>Ke Bagian Kontak<span class="t">&lt;/a&gt;</span></pre>
@@ -1261,7 +1264,7 @@ function sapa(nama) {
         <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><span>Semua Tipe Input</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
         <pre><span class="c">&lt;!-- Teks --&gt;</span>
 <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span>           <span class="a">placeholder</span>=<span class="v">"Nama lengkap"</span><span class="t">/&gt;</span>
-<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span>          <span class="a">placeholder</span>=<span class="v">"user@email.com"</span><span class="t">/&gt;</span>
+<span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span>          <span class="a">placeholder</span>=<span class="v">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c797f697e4c69616d6560226f6361">[email&#160;protected]</a>"</span><span class="t">/&gt;</span>
 <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"password"</span>       <span class="a">placeholder</span>=<span class="v">"Kata sandi"</span><span class="t">/&gt;</span>
 <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"search"</span>         <span class="a">placeholder</span>=<span class="v">"Cari..."</span><span class="t">/&gt;</span>
 <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"url"</span>            <span class="a">placeholder</span>=<span class="v">"https://..."</span><span class="t">/&gt;</span>
@@ -1622,7 +1625,7 @@ function sapa(nama) {
 <span class="t">&lt;/main&gt;</span>
 
 <span class="t">&lt;footer&gt;</span>
-  <span class="t">&lt;address&gt;</span>Kontak: <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:hi@example.com"</span><span class="t">&gt;</span>hi@example.com<span class="t">&lt;/a&gt;&lt;/address&gt;</span>
+  <span class="t">&lt;address&gt;</span>Kontak: <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="177f7e57726f767a677b723974787a">[email&#160;protected]</a>"</span><span class="t">&gt;</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f0f1d8fde0f9f5e8f4fdb6fbf7f5">[email&#160;protected]</a><span class="t">&lt;/a&gt;&lt;/address&gt;</span>
   <span class="t">&lt;p&gt;</span>&amp;copy; 2025 Website Saya<span class="t">&lt;/p&gt;</span>
 <span class="t">&lt;/footer&gt;</span></pre>
       </div>
@@ -1820,6 +1823,495 @@ function sapa(nama) {
 
     <hr/>
 
+    <!-- ─── GLOBAL ATTRIBUTES ─── -->
+    <section class="elem-section" id="global-attrs">
+      <div class="elem-header">
+        <span class="elem-tag">Atribut Global</span>
+        <span class="elem-name">Global Attributes</span>
+        <span class="elem-category" style="background:rgba(251,191,36,0.15);color:#fbbf24;border-color:rgba(251,191,36,0.3);">HTML Standard</span>
+      </div>
+      <p class="elem-desc">Atribut global dapat digunakan pada <strong>semua elemen HTML</strong> tanpa terkecuali. Ini adalah fondasi penting untuk aksesibilitas, interaktivitas, dan pengelolaan konten.</p>
+
+      <div class="tip info"><span class="tip-icon">💡</span><div class="tip-text"><strong>Tips:</strong> Atribut global seperti <code>id</code>, <code>class</code>, <code>style</code>, dan <code>data-*</code> adalah yang paling sering digunakan sehari-hari di hampir semua proyek web.</div></div>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--accent);">🔑 Identitas &amp; Klasifikasi</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">id</td>
+          <td class="attr-type">string (unik)</td>
+          <td class="attr-desc">Identifier unik untuk elemen. Digunakan untuk CSS <code>#id</code>, JS <code>getElementById</code>, dan navigasi anchor <code>#id</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">class</td>
+          <td class="attr-type">string (list)</td>
+          <td class="attr-desc">Satu atau lebih nama kelas dipisah spasi. Digunakan untuk CSS <code>.class</code> dan JS <code>querySelectorAll</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">style</td>
+          <td class="attr-type">CSS inline</td>
+          <td class="attr-desc">CSS inline langsung pada elemen. Memiliki spesifisitas tinggi — gunakan dengan bijak, lebih baik pakai kelas CSS.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">title</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Teks tooltip yang muncul saat hover. Juga membantu aksesibilitas jika digunakan pada <code>&lt;abbr&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">lang</td>
+          <td class="attr-type">BCP 47 tag</td>
+          <td class="attr-desc">Menentukan bahasa konten. Contoh: <code>lang="id"</code> (Indonesia), <code>lang="en"</code> (Inggris). Penting untuk screen reader dan SEO.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">dir</td>
+          <td class="attr-type">ltr | rtl | auto</td>
+          <td class="attr-desc">Arah penulisan teks. <code>ltr</code> = kiri ke kanan, <code>rtl</code> = kanan ke kiri (Arab, Ibrani), <code>auto</code> = deteksi otomatis.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">translate</td>
+          <td class="attr-type">yes | no</td>
+          <td class="attr-desc">Menentukan apakah konten boleh diterjemahkan tool seperti Google Translate. <code>no</code> untuk nama brand, kode, dll.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--accent);">🎛️ Interaktivitas &amp; Kontrol</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">contenteditable</td>
+          <td class="attr-type">true | false | plaintext-only</td>
+          <td class="attr-desc">Membuat elemen bisa diedit langsung oleh pengguna, seperti editor teks sederhana. <code>plaintext-only</code> hanya teks tanpa format.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">draggable</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Mengaktifkan drag &amp; drop HTML5 pada elemen. Butuh event handler JS seperti <code>ondragstart</code>, <code>ondrop</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">hidden</td>
+          <td class="attr-type">(boolean) | until-found</td>
+          <td class="attr-desc">Menyembunyikan elemen dari tampilan dan aksesibilitas. <code>until-found</code> = tersembunyi tapi bisa ditemukan oleh browser search (<code>Ctrl+F</code>).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">inert</td>
+          <td class="attr-type">(boolean)</td>
+          <td class="attr-desc">Menonaktifkan semua interaksi pada elemen dan turunannya — klik, fokus, pencarian. Berguna untuk modal overlay atau panel tidak aktif.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">tabindex</td>
+          <td class="attr-type">integer</td>
+          <td class="attr-desc"><code>0</code> = ikut urutan DOM, <code>-1</code> = bisa difokus via JS tapi tidak via Tab, <code>1+</code> = urutan kustom (hindari nilai positif).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">accesskey</td>
+          <td class="attr-type">karakter tunggal</td>
+          <td class="attr-desc">Shortcut keyboard untuk mengaktifkan/fokus elemen. Implementasi berbeda tiap OS/browser. Contoh: <code>accesskey="s"</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">spellcheck</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Mengaktifkan/menonaktifkan pengecekan ejaan. Berguna pada <code>contenteditable</code> dan <code>&lt;textarea&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">autocapitalize</td>
+          <td class="attr-type">off | none | on | sentences | words | characters</td>
+          <td class="attr-desc">Mengontrol auto-kapitalisasi pada keyboard mobile. <code>sentences</code> = awal kalimat, <code>words</code> = tiap kata, <code>characters</code> = semua huruf kapital.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--accent);">📦 Data Kustom</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">data-*</td>
+          <td class="attr-type">string (bebas)</td>
+          <td class="attr-desc">Menyimpan data kustom pada elemen. Bisa dibaca via JS: <code>element.dataset.namaKunci</code>. Contoh: <code>data-user-id="42"</code> → <code>el.dataset.userId</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">slot</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Menempatkan elemen ke dalam slot bernama di Shadow DOM (Web Components). Contoh: <code>&lt;span slot="judul"&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">is</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Menghubungkan elemen HTML standar ke Custom Element yang sudah terdaftar. Contoh: <code>&lt;button is="my-button"&gt;</code>.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--accent);">📖 Microdata &amp; Referensi</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">itemscope</td>
+          <td class="attr-type">(boolean)</td>
+          <td class="attr-desc">Menandai elemen sebagai wadah item microdata Schema.org. Biasanya dikombinasikan dengan <code>itemtype</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">itemtype</td>
+          <td class="attr-type">URL</td>
+          <td class="attr-desc">URL vocabulary Schema.org untuk tipe item. Contoh: <code>itemtype="https://schema.org/Person"</code>. Berguna untuk SEO rich snippets.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">itemprop</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Nama properti microdata. Nilainya diambil dari konten elemen atau atribut <code>content</code>/<code>src</code>/<code>href</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">itemid</td>
+          <td class="attr-type">URL</td>
+          <td class="attr-desc">Identifier global unik untuk item microdata, biasanya berupa URL atau URN.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">itemref</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Daftar ID elemen lain yang propertinya termasuk dalam item ini. Berguna jika properti tidak bisa diletakkan di dalam elemen <code>itemscope</code>.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--accent);">🎨 Rendering &amp; Performa</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">part</td>
+          <td class="attr-type">string (list)</td>
+          <td class="attr-desc">Mengekspos bagian internal Shadow DOM agar bisa di-style dari luar via CSS <code>::part()</code>. Contoh: <code>part="button icon"</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">exportparts</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Meneruskan part dari Shadow DOM nested agar bisa diakses dari luar. Contoh: <code>exportparts="button:my-button"</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">popover</td>
+          <td class="attr-type">auto | manual</td>
+          <td class="attr-desc">Menjadikan elemen sebagai popover native HTML. <code>auto</code> = menutup saat klik luar, <code>manual</code> = hanya lewat JS. Dikontrol via <code>popovertarget</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">enterkeyhint</td>
+          <td class="attr-type">enter | done | go | next | previous | search | send</td>
+          <td class="attr-desc">Mengubah label tombol Enter pada keyboard virtual mobile. Berguna untuk UX form di smartphone.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">inputmode</td>
+          <td class="attr-type">none | text | decimal | numeric | tel | search | email | url</td>
+          <td class="attr-desc">Menentukan tipe keyboard virtual yang muncul. Bisa digunakan pada elemen apapun, tidak hanya <code>&lt;input&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">nonce</td>
+          <td class="attr-type">string (base64)</td>
+          <td class="attr-desc">Token sekali pakai untuk Content Security Policy (CSP). Digunakan pada <code>&lt;script&gt;</code> dan <code>&lt;style&gt;</code> untuk mencegah XSS.</td>
+        </tr>
+      </table>
+
+      <div class="code-block">
+        <div class="code-header"><span>Contoh Penggunaan Global Attributes</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- data-* untuk menyimpan data kustom --&gt;</span>
+<span class="t">&lt;button</span>
+  <span class="a">id</span>=<span class="v">"btn-hapus"</span>
+  <span class="a">class</span>=<span class="v">"btn btn-danger"</span>
+  <span class="a">data-item-id</span>=<span class="v">"42"</span>
+  <span class="a">data-confirm</span>=<span class="v">"Yakin ingin hapus?"</span>
+  <span class="a">title</span>=<span class="v">"Hapus item ini"</span>
+  <span class="a">tabindex</span>=<span class="v">"0"</span>
+<span class="t">&gt;</span>Hapus<span class="t">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- contenteditable untuk editor sederhana --&gt;</span>
+<span class="t">&lt;div</span>
+  <span class="a">contenteditable</span>=<span class="v">"true"</span>
+  <span class="a">spellcheck</span>=<span class="v">"true"</span>
+  <span class="a">lang</span>=<span class="v">"id"</span>
+  <span class="a">data-placeholder</span>=<span class="v">"Tulis sesuatu..."</span>
+<span class="t">&gt;&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- popover native HTML --&gt;</span>
+<span class="t">&lt;button</span> <span class="a">popovertarget</span>=<span class="v">"info-box"</span><span class="t">&gt;</span>Info<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;div</span> <span class="a">id</span>=<span class="v">"info-box"</span> <span class="a">popover</span>=<span class="v">"auto"</span><span class="t">&gt;</span>
+  Ini popover native tanpa JavaScript!
+<span class="t">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Microdata Schema.org --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">itemscope</span> <span class="a">itemtype</span>=<span class="v">"https://schema.org/Person"</span><span class="t">&gt;</span>
+  <span class="t">&lt;span</span> <span class="a">itemprop</span>=<span class="v">"name"</span><span class="t">&gt;</span>Akbar<span class="t">&lt;/span&gt;</span>
+  <span class="t">&lt;span</span> <span class="a">itemprop</span>=<span class="v">"jobTitle"</span><span class="t">&gt;</span>Developer<span class="t">&lt;/span&gt;</span>
+<span class="t">&lt;/div&gt;</span></pre>
+      </div>
+    </section>
+
+    <hr/>
+
+    <!-- ─── ARIA ATTRIBUTES ─── -->
+    <section class="elem-section" id="aria-attrs">
+      <div class="elem-header">
+        <span class="elem-tag">aria-*</span>
+        <span class="elem-name">ARIA Attributes</span>
+        <span class="elem-category" style="background:rgba(52,211,153,0.15);color:#34d399;border-color:rgba(52,211,153,0.3);">Aksesibilitas</span>
+      </div>
+      <p class="elem-desc">ARIA (Accessible Rich Internet Applications) adalah set atribut untuk meningkatkan aksesibilitas konten web — terutama untuk pengguna screen reader, keyboard navigation, dan assistive technology lainnya.</p>
+
+      <div class="tip info"><span class="tip-icon">♿</span><div class="tip-text"><strong>Prinsip ARIA:</strong> <em>"No ARIA is better than bad ARIA."</em> Gunakan elemen HTML semantik terlebih dahulu. ARIA hanya digunakan saat elemen native tidak cukup untuk menyampaikan makna yang tepat.</div></div>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--green);">🏷️ Role — Peran Elemen</h3>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">Atribut <code>role</code> menentukan tujuan semantik elemen kepada assistive technology.</p>
+      <table class="attr-table">
+        <tr><th>Nilai role</th><th>Keterangan</th></tr>
+        <tr><td class="attr-name">button</td><td class="attr-desc">Elemen yang bisa diklik seperti tombol. Gunakan pada <code>&lt;div&gt;</code>/<code>&lt;span&gt;</code> yang berperan sebagai button.</td></tr>
+        <tr><td class="attr-name">link</td><td class="attr-desc">Elemen navigasi seperti anchor. Diumumkan sebagai link oleh screen reader.</td></tr>
+        <tr><td class="attr-name">navigation</td><td class="attr-desc">Landmark untuk area navigasi. Setara dengan <code>&lt;nav&gt;</code>.</td></tr>
+        <tr><td class="attr-name">main</td><td class="attr-desc">Konten utama halaman. Setara dengan <code>&lt;main&gt;</code>. Hanya boleh satu per halaman.</td></tr>
+        <tr><td class="attr-name">banner</td><td class="attr-desc">Header situs utama. Setara dengan <code>&lt;header&gt;</code> di level halaman.</td></tr>
+        <tr><td class="attr-name">complementary</td><td class="attr-desc">Konten pendukung konten utama. Setara dengan <code>&lt;aside&gt;</code>.</td></tr>
+        <tr><td class="attr-name">contentinfo</td><td class="attr-desc">Footer situs. Setara dengan <code>&lt;footer&gt;</code> di level halaman.</td></tr>
+        <tr><td class="attr-name">search</td><td class="attr-desc">Area pencarian. Gunakan pada form atau section yang berisi fitur search.</td></tr>
+        <tr><td class="attr-name">form</td><td class="attr-desc">Landmark form. Hanya diumumkan screen reader jika memiliki label (<code>aria-label</code>/<code>aria-labelledby</code>).</td></tr>
+        <tr><td class="attr-name">dialog</td><td class="attr-desc">Jendela dialog modal/non-modal. Butuh <code>aria-labelledby</code> dan manajemen fokus.</td></tr>
+        <tr><td class="attr-name">alert</td><td class="attr-desc">Pesan penting yang langsung diumumkan screen reader saat muncul (live region implisit).</td></tr>
+        <tr><td class="attr-name">status</td><td class="attr-desc">Pesan status non-kritis. Diumumkan screen reader saat ada waktu luang.</td></tr>
+        <tr><td class="attr-name">log</td><td class="attr-desc">Area log yang berisi update berurutan, seperti chat atau riwayat aktivitas.</td></tr>
+        <tr><td class="attr-name">progressbar</td><td class="attr-desc">Indikator progres. Gunakan bersama <code>aria-valuenow</code>, <code>aria-valuemin</code>, <code>aria-valuemax</code>.</td></tr>
+        <tr><td class="attr-name">tab</td><td class="attr-desc">Tab dalam komponen tablist. Selalu dalam konteks <code>role="tablist"</code>.</td></tr>
+        <tr><td class="attr-name">tablist</td><td class="attr-desc">Wadah untuk sekumpulan tab.</td></tr>
+        <tr><td class="attr-name">tabpanel</td><td class="attr-desc">Panel konten yang terkait dengan tab.</td></tr>
+        <tr><td class="attr-name">listbox</td><td class="attr-desc">Daftar pilihan yang bisa dipilih, seperti dropdown kustom.</td></tr>
+        <tr><td class="attr-name">option</td><td class="attr-desc">Pilihan di dalam <code>listbox</code> atau <code>combobox</code>.</td></tr>
+        <tr><td class="attr-name">combobox</td><td class="attr-desc">Input dengan dropdown sugesti. Gunakan pada autocomplete kustom.</td></tr>
+        <tr><td class="attr-name">tooltip</td><td class="attr-desc">Tooltip deskriptif yang muncul saat hover/fokus.</td></tr>
+        <tr><td class="attr-name">presentation / none</td><td class="attr-desc">Menghapus semantik elemen. Berguna untuk elemen dekoratif seperti <code>&lt;table&gt;</code> yang dipakai untuk layout.</td></tr>
+        <tr><td class="attr-name">img</td><td class="attr-desc">Elemen yang merupakan gambar/ilustrasi. Butuh <code>aria-label</code> sebagai teks alternatif.</td></tr>
+        <tr><td class="attr-name">separator</td><td class="attr-desc">Pemisah visual/semantik antar konten. Setara dengan <code>&lt;hr&gt;</code>.</td></tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--green);">🏷️ Properti ARIA — Labeling &amp; Deskripsi</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">aria-label</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Label teks langsung untuk elemen. Digunakan saat tidak ada teks label yang terlihat. Contoh: <code>aria-label="Tutup dialog"</code> pada tombol ×.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-labelledby</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Menunjuk ID elemen lain sebagai label. Lebih kuat dari <code>aria-label</code>. Contoh: <code>aria-labelledby="judul-modal"</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-describedby</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Menunjuk ID elemen yang berisi deskripsi tambahan. Diumumkan setelah label utama. Berguna untuk error message atau instruksi.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-details</td>
+          <td class="attr-type">ID</td>
+          <td class="attr-desc">Menunjuk ke penjelasan panjang (seperti <code>&lt;details&gt;</code>). Lebih kaya dari <code>aria-describedby</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-placeholder</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Hint teks untuk widget input saat kosong. Setara ARIA dengan atribut <code>placeholder</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-roledescription</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Mengganti deskripsi role bawaan dengan teks kustom. Contoh: mengganti "slide" menjadi "kartu informasi".</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--green);">🔘 State ARIA — Kondisi Dinamis</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">aria-hidden</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menyembunyikan elemen dari accessibility tree. Berbeda dari CSS <code>visibility:hidden</code>. Gunakan untuk ikon dekoratif atau duplikat konten.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-expanded</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai apakah elemen yang dikontrol sedang terbuka/tertutup. Wajib pada tombol accordion, dropdown, tree node.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-selected</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai apakah item sedang dipilih. Digunakan pada <code>tab</code>, <code>option</code>, <code>treeitem</code>, <code>row</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-checked</td>
+          <td class="attr-type">true | false | mixed</td>
+          <td class="attr-desc">Status checkbox/radio/toggle. <code>mixed</code> = indeterminate state (checkbox induk yang sebagian anak tercentang).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-pressed</td>
+          <td class="attr-type">true | false | mixed</td>
+          <td class="attr-desc">Status toggle button. <code>true</code> = sedang aktif/ditekan. Gunakan pada tombol yang memiliki dua state (aktif/tidak aktif).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-disabled</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai elemen nonaktif secara semantik. Berbeda dari atribut <code>disabled</code> — elemen masih bisa difokus dan dideteksi screen reader.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-readonly</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai widget input yang bisa dibaca tapi tidak bisa diubah. Berbeda dari <code>readonly</code> HTML — lebih luas penggunaannya.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-required</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai field wajib diisi. Setara semantik dengan atribut <code>required</code> HTML.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-invalid</td>
+          <td class="attr-type">true | false | grammar | spelling</td>
+          <td class="attr-desc">Menandai nilai input tidak valid. <code>grammar</code> = kesalahan tata bahasa, <code>spelling</code> = ejaan salah. Gunakan bersama <code>aria-errormessage</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-busy</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc">Menandai elemen sedang memuat/diperbarui. Screen reader menunggu sebelum mengumumkan konten yang berubah.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-current</td>
+          <td class="attr-type">page | step | location | date | time | true | false</td>
+          <td class="attr-desc">Menandai item yang merepresentasikan item saat ini dalam set. <code>page</code> = halaman aktif di navigasi, <code>step</code> = langkah aktif wizard.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--green);">📊 Properti Widget &amp; Nilai</h3>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">aria-valuemin</td>
+          <td class="attr-type">number</td>
+          <td class="attr-desc">Nilai minimum widget range (slider, progressbar, spinbutton).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-valuemax</td>
+          <td class="attr-type">number</td>
+          <td class="attr-desc">Nilai maksimum widget range.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-valuenow</td>
+          <td class="attr-type">number</td>
+          <td class="attr-desc">Nilai saat ini widget range. Update via JS saat nilai berubah.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-valuetext</td>
+          <td class="attr-type">string</td>
+          <td class="attr-desc">Teks yang dibacakan sebagai nilai, mengganti <code>aria-valuenow</code>. Contoh: <code>aria-valuetext="Senin"</code> untuk slider hari.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-setsize</td>
+          <td class="attr-type">integer</td>
+          <td class="attr-desc">Total jumlah item dalam set (list, tree, dll). Berguna untuk virtual scrolling yang tidak render semua item.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-posinset</td>
+          <td class="attr-type">integer</td>
+          <td class="attr-desc">Posisi item dalam set. Digunakan bersama <code>aria-setsize</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-level</td>
+          <td class="attr-type">integer (1-6)</td>
+          <td class="attr-desc">Level hierarki heading atau tree node. Berguna untuk heading buatan yang bukan elemen <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-errormessage</td>
+          <td class="attr-type">ID</td>
+          <td class="attr-desc">Menunjuk ID elemen yang berisi pesan error. Digunakan bersama <code>aria-invalid="true"</code>.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-controls</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Menunjuk ID elemen yang dikontrol oleh elemen ini. Contoh: tombol yang mengontrol panel accordion.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-owns</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Mendefinisikan relasi parent-child di luar DOM. Berguna saat struktur DOM tidak mencerminkan hubungan semantik.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-flowto</td>
+          <td class="attr-type">ID list</td>
+          <td class="attr-desc">Menentukan urutan baca alternatif bagi screen reader. Berguna untuk layout multi-kolom yang kompleks.</td>
+        </tr>
+      </table>
+
+      <h3 style="margin:1.5rem 0 0.75rem;font-size:0.9rem;color:var(--green);">📡 Live Regions — Update Dinamis</h3>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">Live regions mengumumkan perubahan konten secara otomatis kepada pengguna screen reader.</p>
+      <table class="attr-table">
+        <tr><th>Atribut</th><th>Nilai</th><th>Keterangan</th></tr>
+        <tr>
+          <td class="attr-name">aria-live</td>
+          <td class="attr-type">off | polite | assertive</td>
+          <td class="attr-desc"><code>polite</code> = umumkan saat screen reader idle (untuk status update), <code>assertive</code> = umumkan segera (untuk alert kritis, interupsi pengguna).</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-atomic</td>
+          <td class="attr-type">true | false</td>
+          <td class="attr-desc"><code>true</code> = baca seluruh region saat ada perubahan apapun. <code>false</code> = hanya bagian yang berubah.</td>
+        </tr>
+        <tr>
+          <td class="attr-name">aria-relevant</td>
+          <td class="attr-type">additions | removals | text | all</td>
+          <td class="attr-desc">Jenis perubahan yang memicu pengumuman live region. Default: <code>additions text</code>.</td>
+        </tr>
+      </table>
+
+      <div class="code-block">
+        <div class="code-header"><span>Contoh Penggunaan ARIA Lengkap</span><button class="copy-btn" onclick="copyCode(this)">Salin</button></div>
+        <pre><span class="c">&lt;!-- Tombol toggle dengan state --&gt;</span>
+<span class="t">&lt;button</span>
+  <span class="a">role</span>=<span class="v">"button"</span>
+  <span class="a">aria-pressed</span>=<span class="v">"false"</span>
+  <span class="a">aria-label</span>=<span class="v">"Mode gelap"</span>
+  <span class="a">onclick</span>=<span class="v">"this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')==='false'?'true':'false')"</span>
+<span class="t">&gt;</span>🌙<span class="t">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Input dengan validasi --&gt;</span>
+<span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"email"</span><span class="t">&gt;</span>Email<span class="t">&lt;/label&gt;</span>
+<span class="t">&lt;input</span>
+  <span class="a">id</span>=<span class="v">"email"</span>
+  <span class="a">type</span>=<span class="v">"email"</span>
+  <span class="a">aria-required</span>=<span class="v">"true"</span>
+  <span class="a">aria-invalid</span>=<span class="v">"true"</span>
+  <span class="a">aria-errormessage</span>=<span class="v">"email-error"</span>
+<span class="t">/&gt;</span>
+<span class="t">&lt;span</span> <span class="a">id</span>=<span class="v">"email-error"</span> <span class="a">role</span>=<span class="v">"alert"</span><span class="t">&gt;</span>Format email tidak valid<span class="t">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Live region untuk notifikasi --&gt;</span>
+<span class="t">&lt;div</span>
+  <span class="a">aria-live</span>=<span class="v">"polite"</span>
+  <span class="a">aria-atomic</span>=<span class="v">"true"</span>
+  <span class="a">class</span>=<span class="v">"sr-only"</span>
+  <span class="a">id</span>=<span class="v">"status-msg"</span>
+<span class="t">&gt;&lt;/div&gt;</span>
+<span class="c">&lt;!-- JS: document.getElementById('status-msg').textContent = 'Data berhasil disimpan'; --&gt;</span>
+
+<span class="c">&lt;!-- Komponen tabs yang aksesibel --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">role</span>=<span class="v">"tablist"</span> <span class="a">aria-label</span>=<span class="v">"Menu Utama"</span><span class="t">&gt;</span>
+  <span class="t">&lt;button</span> <span class="a">role</span>=<span class="v">"tab"</span> <span class="a">aria-selected</span>=<span class="v">"true"</span>  <span class="a">aria-controls</span>=<span class="v">"panel-1"</span> <span class="a">id</span>=<span class="v">"tab-1"</span><span class="t">&gt;</span>Beranda<span class="t">&lt;/button&gt;</span>
+  <span class="t">&lt;button</span> <span class="a">role</span>=<span class="v">"tab"</span> <span class="a">aria-selected</span>=<span class="v">"false"</span> <span class="a">aria-controls</span>=<span class="v">"panel-2"</span> <span class="a">id</span>=<span class="v">"tab-2"</span><span class="t">&gt;</span>Profil<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;div</span> <span class="a">role</span>=<span class="v">"tabpanel"</span> <span class="a">id</span>=<span class="v">"panel-1"</span> <span class="a">aria-labelledby</span>=<span class="v">"tab-1"</span><span class="t">&gt;</span>Konten Beranda<span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;div</span> <span class="a">role</span>=<span class="v">"tabpanel"</span> <span class="a">id</span>=<span class="v">"panel-2"</span> <span class="a">aria-labelledby</span>=<span class="v">"tab-2"</span> <span class="a">hidden</span><span class="t">&gt;</span>Konten Profil<span class="t">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Slider aksesibel --&gt;</span>
+<span class="t">&lt;div</span>
+  <span class="a">role</span>=<span class="v">"slider"</span>
+  <span class="a">aria-valuemin</span>=<span class="v">"0"</span>
+  <span class="a">aria-valuemax</span>=<span class="v">"100"</span>
+  <span class="a">aria-valuenow</span>=<span class="v">"40"</span>
+  <span class="a">aria-valuetext</span>=<span class="v">"40 persen"</span>
+  <span class="a">aria-label</span>=<span class="v">"Volume"</span>
+  <span class="a">tabindex</span>=<span class="v">"0"</span>
+<span class="t">&gt;&lt;/div&gt;</span></pre>
+      </div>
+
+      <div class="tip warning"><span class="tip-icon">⚠️</span><div class="tip-text"><strong>Jangan gunakan ARIA untuk mengganti HTML semantik!</strong> Contoh: gunakan <code>&lt;button&gt;</code> bukan <code>&lt;div role="button"&gt;</code>. Elemen native sudah otomatis punya role, state, keyboard support, dan focus management yang benar. ARIA hanya untuk widget kustom yang tidak punya padanan HTML.</div></div>
+    </section>
+
+    <hr/>
+
     <!-- ─── DEPRECATED ─── -->
     <section class="elem-section" id="deprecated">
       <div class="elem-header">
@@ -1861,7 +2353,7 @@ function sapa(nama) {
   </main>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Copy button
   function copyCode(btn) {
     const pre = btn.closest('.code-block').querySelector('pre');
@@ -1910,32 +2402,4 @@ function sapa(nama) {
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(360, y); ctx.stroke();
     }
 
-    // Sine wave
-    ctx.beginPath();
-    ctx.strokeStyle = '#4f8ef7';
-    ctx.lineWidth = 2.5;
-    for (let x = 0; x <= 360; x++) {
-      const y = 50 + Math.sin(x * 0.045) * 32;
-      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-
-    // Cosine wave
-    ctx.beginPath();
-    ctx.strokeStyle = '#a78bfa';
-    ctx.lineWidth = 1.5;
-    for (let x = 0; x <= 360; x++) {
-      const y = 50 + Math.cos(x * 0.07) * 18;
-      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-
-    // Label
-    ctx.fillStyle = '#64748b';
-    ctx.font = '10px "JetBrains Mono", monospace';
-    ctx.fillText('<canvas> — digambar dengan JavaScript', 10, 93);
-  }
-</script>
-
-</body>
-</html>
+    // Sine wa
